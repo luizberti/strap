@@ -1,0 +1,30 @@
+# Tarsnap Configuration
+#######################
+
+cachedir /usr/local/tarsnap-cache
+keyfile ~/tarsnap.key
+
+aggressive-networking
+#lowmem
+
+print-stats
+humanize-numbers
+checkpoint-bytes 1G
+
+exclude .DS_Store
+exclude .Spotlight-V100
+exclude .Trashes
+exclude .Trash
+exclude ._*
+exclude .CFUserTextEncoding
+exclude .localized
+exclude ?Icon
+exclude Desktop.ini
+exclude Thumbs.db
+exclude *.pyc
+exclude *.swp
+
+# Snapshot time.  Use this option if you are backing up files
+# from a filesystem snapshot rather than from a "live" filesystem.
+#snaptime <file>
+

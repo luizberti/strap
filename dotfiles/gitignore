@@ -1,0 +1,26 @@
+# Git Ignore
+############
+
+# Garbage
+.Spotlight-V100
+.Trashes
+.Trash
+.CFUserTextEncoding
+.localized
+.DS_Store
+?Icon
+._*
+
+# Windows Garbage
+Desktop.ini
+Thumbs.db
+
+# Development Files
+*.codekit
+.sass-cache/
+__pycache__/
+*.pyc
+*.swp
+*.o
+bin/
+

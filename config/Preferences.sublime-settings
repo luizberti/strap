@@ -1,0 +1,75 @@
+{
+    "bold_folder_labels": true,
+    "caret_style": "wide",
+    "color_inactive_tabs": true,
+    "color_scheme": "Packages/User/SublimeLinter/Tomorrow-Night-Eighties (SL).tmTheme",
+    "default_encoding": "UTF-8",
+    "default_line_ending": "unix",
+    "detect_indentation": false,
+    "detect_slow_plugins": false,
+    "draw_minimap_border": true,
+    "enable_tab_scrolling": false,
+    "ensure_newline_at_eof_on_save": true,
+    "fade_fold_buttons": true,
+    "file_exclude_patterns":
+    [
+        ".*",
+        "*.pyc",
+        "*.pyo",
+        "*.exe",
+        "*.dll",
+        "*.obj",
+        "*.o",
+        "*.a",
+        "*.lib",
+        "*.so",
+        "*.dylib",
+        "*.ncb",
+        "*.sdf",
+        "*.suo",
+        "*.pdb",
+        "*.idb",
+        ".DS_Store",
+        "*.codekit",
+        "*.class",
+        "*.psd",
+        "*.db"
+    ],
+    "folder_exclude_patterns":
+    [
+        ".svn",
+        ".git",
+        ".hg",
+        "CVS",
+        ".sass-cache"
+    ],
+    "font_face": "Input",
+    "font_size": 13.0,
+    "highlight_line": true,
+    "hot_exit": false,
+    "ignored_packages":
+    [
+        "Markdown",
+        "Vintage"
+    ],
+    "line_padding_bottom": 0,
+    "line_padding_top": 0,
+    "remember_open_files": false,
+    "rulers":
+    [
+        80,
+        120
+    ],
+    "scroll_past_end": true,
+    "scroll_speed": 1.4,
+    "sidebar_row_padding_large": true,
+    "spacegray_tabs_xlarge": true,
+    "spell_check": false,
+    "tab_size": 4,
+    "tabs_medium": true,
+    "tabs_padding_medium": true,
+    "theme": "Afterglow-blue.sublime-theme",
+    "translate_tabs_to_spaces": true,
+    "trim_automatic_white_space": true,
+    "trim_trailing_white_space_on_save": true
+}

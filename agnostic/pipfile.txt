@@ -1,0 +1,38 @@
+# CLI Programs
+pythonpy
+bpython
+pudb
+flake8
+httpie
+
+# Bundles
+boltons
+toolz
+funcy
+pillow
+
+# Protocols/Formats
+oauth2
+jinja2
+msgpack-python
+
+# Libraries
+urwid
+numpy
+arrow
+pygments
+faker
+pyserial
+neovim
+
+# Networking
+requests
+pyzmq
+flask
+
+# Databases
+redis
+pymongo
+cassandra-driver
+sqlalchemy
+

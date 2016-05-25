@@ -1,0 +1,23 @@
+# Git Configuration
+###################
+
+[user]
+    name = Luiz Berti
+    email = luizfb@users.noreply.github.com
+
+[push]
+    default = simple
+
+[core]
+    editor = vim
+    excludesfile = ~/.gitignore
+
+[color]
+    ui = auto
+
+[alias]
+    undo-commit = reset --soft HEAD^
+    overview = log --graph --oneline --decorate --all
+    lg = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset' \
+             --abbrev-commit --date=relative
+
