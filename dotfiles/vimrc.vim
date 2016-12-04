@@ -15,7 +15,7 @@ set smartcase
 set backspace=indent,eol,start
 set history=1000
 set undolevels=1000
-set wildignore=*.swp,*.bak,*.pyc,*.class
+set wildignore=*.swp,*.bak,*.pyc,*.class,*.rdb,*.aof
 set title
 
 " :w! Will Force File to Save

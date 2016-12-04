@@ -23,6 +23,8 @@ exclude Desktop.ini
 exclude Thumbs.db
 exclude *.pyc
 exclude *.swp
+exclude *.rdb
+exclude *.aof
 
 # Snapshot time.  Use this option if you are backing up files
 # from a filesystem snapshot rather than from a "live" filesystem.

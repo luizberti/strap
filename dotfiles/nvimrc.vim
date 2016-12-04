@@ -62,7 +62,7 @@ set hidden
 
 " Ignore Patterns
 set wildignore=*.swp,*.bak,*.pyc,*.class,.sass_cache,__pycache__,.DS_Store,.git
-set wildignore+=*.o,*.so
+set wildignore+=*.o,*.so,*.rdb,*.aof,*.jar
 
 " Tabulation
 set tabstop=4

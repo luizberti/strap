@@ -23,4 +23,6 @@ __pycache__/
 *.swp
 *.o
 bin/
+*.rdb
+*.aof
 
