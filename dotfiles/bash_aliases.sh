@@ -28,5 +28,6 @@ alias ccat="pygmentize -O style=monokai -f console256 -g"
 
 # Git
 alias gs="git status"
+alias tiga="tig --all"
 alias ungit="rm -rf ./.git/"
 

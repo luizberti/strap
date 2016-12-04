@@ -62,13 +62,10 @@ brew 'libmill'
 brew 'libuv'
 brew 'jemalloc'
 brew 'ncurses'
-brew 'opencv'
 #brew 'pcre'
 #brew 'pcre++'
-#brew 'numpy', args: ['with-python3']
-#brew 'scipy', args: ['with-python3']
-#brew 'matplotlib', args: ['with-python3', 'with-cairo', 'with-gtk+3', 'with-pyqt5']
-#brew 'wxwidgets'
+#brew 'opencv', args: ['without-numpy']
+#brew 'opencv3', args: ['without-numpy', 'with-python3']
 
 # Lang Tools
 brew 'gdb'

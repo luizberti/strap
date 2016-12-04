@@ -21,6 +21,7 @@ set -x GOPATH    "~/golang/"
 # Development
 alias gpp   "g++"
 alias gs    "git status"
+alias tiga  "tig --all"
 alias ungit "rm -rf ./.git/"
 
 # Navigation

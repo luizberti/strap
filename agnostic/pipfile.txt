@@ -1,29 +1,54 @@
 # CLI Programs
+##############
+
+# Language Tooling
 pythonpy
 bpython
 pudb
 flake8
+
+# 3rd Party
 httpie
+awscli
+
+
+# Libraries
+###########
 
 # Bundles
 boltons
 toolz
 funcy
-pillow
+boto3
 
-# Protocols/Formats
+# Formats & Protocols
+pytoml
 oauth2
 jinja2
+neovim
 msgpack-python
 
-# Libraries
-urwid
-numpy
-arrow
-pygments
+# Miscellaneous
+nose2
 faker
+arrow
+urwid
+pygments
 pyserial
-neovim
+pillow
+greenlet
+
+
+# Advanced
+##########
+
+# Scientific
+numpy
+scipy
+pandas
+matplotlib
+sympy
+jupyter
 
 # Networking
 requests
@@ -33,6 +58,5 @@ flask
 # Databases
 redis
 pymongo
-cassandra-driver
 sqlalchemy
 

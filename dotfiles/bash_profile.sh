@@ -2,7 +2,6 @@
 ##############
 
 # Sources
-source ~/.bashrc
 source ~/.bash_aliases
 source ~/.bash_prompt
 
@@ -10,6 +9,8 @@ source ~/.bash_prompt
 # macOS Specific
 osname=$(uname -s)
 if [ "$osname" == "Darwin" ]; then
+    source ~/.bashrc
+
     toggledesk() {
         state=$(defaults read com.apple.finder CreateDesktop)
         if [[ $state == 'true' ]] ; then
