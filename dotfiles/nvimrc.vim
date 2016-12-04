@@ -54,7 +54,8 @@ highlight clear SignColumn
 " Functionality
 " #############
 
-set hls!
+set hlsearch
+set incsearch
 set showmatch
 set matchtime=0
 set smartcase
@@ -80,4 +81,14 @@ inoremap kj <esc>
 " Function Keys
 nnoremap <F12> :set hls!<CR>
 set pastetoggle=<F2>
+
+" Autotrim Trailing Whitespace
+fun! <SID>StripTrailingWhitespaces()
+    let l = line(".")
+    let c = col(".")
+    %s/\s\+$//e
+    call cursor(l, c)
+endfun
+autocmd FileType c,cpp,java,php,ruby,python \
+autocmd BufWritePre <buffer> :call <SID>StripTrailingWhitespaces()
 
