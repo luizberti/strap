@@ -1,13 +1,6 @@
 # Aliases
 #########
 
-# macOS Specific
-osname=$(uname -s)
-if [ "$osname" == "Darwin" ]; then
-	alias subl="open -a Sublime\ Text"
-fi
-
-
 # Navigation
 alias ..="cd .."
 alias ...="cd ../.."
@@ -27,6 +20,7 @@ alias ccat="pygmentize -O style=monokai -f console256 -g"
 
 
 # Git
+alias gpp="g++"
 alias gs="git status"
 alias tiga="tig --all"
 alias ungit="rm -rf ./.git/"
