@@ -20,13 +20,13 @@ cp -f dotfiles/bashrc.sh        $HOME/.bashrc
 cp -f dotfiles/fish/config.fish $HOME/.config/fish/config.fish
 cp -f dotfiles/fish/functions/* $HOME/.config/fish/functions/
 
-cp -f dotfiles/gitconfig        $HOME/.gitconfig
-cp -f dotfiles/gitignore        $HOME/.gitignore
+cp -f dotfiles/gitconfig.ini    $HOME/.gitconfig
+cp -f dotfiles/gitignore.txt    $HOME/.gitignore
 
-cp -f dotfiles/tarsnaprc        $HOME/.tarsnaprc
+cp -f dotfiles/tarsnaprc.txt    $HOME/.tarsnaprc
 cp -f dotfiles/tmux.conf        $HOME/.tmux.conf
 
-cp -f dotfiles/editorconfig     $HOME/.editorconfig
+cp -f dotfiles/editorconfig.ini $HOME/.editorconfig
 cp -f dotfiles/vimrc.vim        $HOME/.vimrc
 cp -f dotfiles/nvimrc.vim       $HOME/.config/nvim/init.vim
 
