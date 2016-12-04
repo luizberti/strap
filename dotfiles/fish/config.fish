@@ -40,13 +40,13 @@ alias ccat     "pygmentize -O style=monokai -f console256 -g"
 
 
 # OS Specific
-if [(uname) = "Darwin"]
+if [ (uname) = "Darwin" ]
     set -x PATH /usr/local/bin $PATH
     set -x HOMEBREW_CASK_OPTS "--appdir=/Applications"
 
     function toggledesk --description="Toggles the display of items in the Desktop."
         set --local state (defaults read com.apple.finder CreateDesktop)
-        if [state = "true"]
+        if [ $state = "true" ]
             defaults write com.apple.finder CreateDesktop false ;and killall Finder
         else
             defaults write com.apple.finder CreateDesktop true ;and killall Finder
