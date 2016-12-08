@@ -1,20 +1,22 @@
 # Bash RC
 #########
 
-# Environment Variables
-export LC_ALL="en_US.UTF-8"
-export LANG="en_US"
-
-export EDITOR="vim"
+# Shell
 export CLICOLOR=1
+
+# Environment Variables
+export LANG="en_US"
+export LC_ALL="en_US.UTF-8"
+export EDITOR="vim"
 export LESS=-RFX
 
+# Language
 export CC="gcc"
 export CXX="g++"
 export CFLAGS="-march=native -pipe -std=c11 -pedantic -Wall -Wextra"
 export CXXFLAGS=""
 export ARCHFLAGS="-arch x86_64"
-export GOPATH="$HOME/go"
+export GOPATH="$HOME/golang/"
 
 
 # OS Specific
