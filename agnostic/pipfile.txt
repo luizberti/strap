@@ -8,8 +8,9 @@ pudb
 flake8
 
 # 3rd Party
-httpie
 awscli
+httpie
+gunicorn
 
 
 # Libraries
@@ -23,6 +24,8 @@ boto3
 
 # Formats & Protocols
 pytoml
+ujson
+jsonschema
 oauth2
 jinja2
 neovim
@@ -32,11 +35,16 @@ msgpack-python
 nose2
 faker
 arrow
-urwid
+pendulum
+maya
 pygments
 pyserial
 pillow
 greenlet
+gevent
+aiofiles
+uvloop
+watchdog
 
 
 # Advanced
@@ -54,9 +62,13 @@ jupyter
 requests
 pyzmq
 flask
+sanic
 
 # Databases
 redis
+hiredis
 pymongo
+asyncpg
 sqlalchemy
+records
 
