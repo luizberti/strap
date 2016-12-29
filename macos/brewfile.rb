@@ -3,6 +3,7 @@
 
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
+tap 'caskroom/fonts'
 
 # Official
 tap 'homebrew/dupes'     # duplicates of system binaries
@@ -47,8 +48,6 @@ brew 'luajit'
 #brew 'luarocks'
 #brew 'luvit'
 brew 'node'
-#brew 'ruby'
-#brew 'go'
 # [TODO] add julia and racket (maybe common-lisp, haskell, rust and go as well)
 
 # Libraries
@@ -62,10 +61,7 @@ brew 'libmill'
 brew 'libuv'
 brew 'jemalloc'
 brew 'ncurses'
-#brew 'pcre'
-#brew 'pcre++'
-#brew 'opencv', args: ['without-numpy']
-#brew 'opencv3', args: ['without-numpy', 'with-python3']
+brew 'hiredis'
 
 # Lang Tools
 brew 'gdb'
@@ -73,7 +69,6 @@ brew 'creduce'
 brew 'radare2'
 brew 'valgrind'
 brew 'gcore'
-#brew 'scons'
 
 # Dev Tools
 brew 'ag'
@@ -89,7 +84,8 @@ brew 'vim', args: ['with-python3', 'with-lua', 'with-luajit']
 brew 'neovim'
 brew 'sqlite'
 brew 'redis', restart_service: false
-brew 'vegeta'  # brew 'gor' is similar and serves to replay traffic
+brew 'vegeta'
+#brew 'gor'
 #brew 'vault'
 
 # CLI Tools
@@ -148,16 +144,32 @@ cask 'moom'
 cask 'colorpicker-skalacolor'
 cask 'airtable'
 cask 'notion'
+#cask 'handbrake'
+
+# Designer
+cask 'sketch'
+cask 'blender'
 
 # Developer
 cask 'dash'
 cask 'atom'
 cask 'sublime-text'
+cask 'visual-studio-code'
 cask 'codekit'
 cask 'transmit'
 cask 'virtualbox'
 cask 'vagrant'
-#cask 'iterm2'
+cask 'iterm2'
+
+# QuickLook Plugins
+cask 'quicklook-json'
+cask 'qlimagesize'
+cask 'webpquicklook'
+cask 'qlvideo'
+cask 'suspicious-package'
+
+# Fonts
+cask 'font-fira-code'
 
 
 # Mac App Store
