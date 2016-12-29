@@ -20,8 +20,8 @@ set -x ARCHFLAGS "-arch x86_64"
 set -x GOPATH    (string join '' $HOME /golang/)
 
 # Navigation
-alias ...  "../../"
-alias .... "../../../"
+alias ...  "cd ../../"
+alias .... "cd ../../../"
 
 # Development
 alias gpp   "g++"
@@ -31,8 +31,8 @@ alias ungit "rm -rf ./.git/"
 
 # Better Flags
 alias lsa     "ls -A"
-alias tra     "tree --dirsfirst -a -F -I '.git|.hg|.DS_Store|.sass-cache'"
-alias tree    "tree --dirsfirst -F"
+alias tra     "tree --dirsfirst -a -F -I '.git|.hg|.DS_Store|.sass-cache|node_modules'"
+alias tree    "tree --dirsfirst -F -I '__pycache__|node_modules'"
 alias duh     "du -hc"
 alias hexdump "hexdump -C"
 alias crontab "crontab -i"
@@ -44,6 +44,7 @@ alias httpdump "sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET
 alias servedir "sudo python -m SimpleHTTPServer"
 alias ccat     "pygmentize -O style=monokai -f console256 -g"
 alias linesubt "grep -Fxvf"
+alias venv3    "python3 -m venv"
 
 
 # OS Specific
