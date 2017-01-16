@@ -1,4 +1,7 @@
-#!/bin/bash
+#!/usr/bin/env bash
+cd -P -- "$(dirname -- "$0")"
+set -e
+
 
 ###############
 # SCRIPT INIT #
@@ -7,7 +10,6 @@
 # Ask for Privileges Upfront & Keep Alive
 sudo -v || exit 1
 while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
 
 
 ###############
@@ -105,3 +107,4 @@ killall Dock
 killall SystemUIServer
 
 exit 0
+

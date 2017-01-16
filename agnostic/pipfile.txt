@@ -70,5 +70,8 @@ hiredis
 pymongo
 asyncpg
 sqlalchemy
+
+# this is a dependency of records, but the pip version of it is broken
+git+https://github.com/kennethreitz/tablib.git
 records
 

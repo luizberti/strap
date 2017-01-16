@@ -1,9 +1,6 @@
-#!/bin/bash -e
-
-# Dotfile Installer
-###################
-
+#!/usr/bin/env bash
 cd -P -- "$(dirname -- "$0")"
+set -e
 
 
 # Path Maker

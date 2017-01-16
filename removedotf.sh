@@ -1,7 +1,6 @@
-#!/bin/bash -e
-
-# Dotfile Uninstaller
-#####################
+#!/usr/bin/env bash
+cd -P -- "$(dirname -- "$0")"
+set -e
 
 
 # Removes Dotfiles

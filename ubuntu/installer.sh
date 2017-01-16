@@ -1,4 +1,7 @@
-#!/bin/bash -e
+#!/usr/bin/env bash
+cd -P -- "$(dirname -- "$0")"
+set -ev
+
 
 sudo apt update
 sudo apt upgrade -y
