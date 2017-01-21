@@ -171,6 +171,7 @@ cask 'suspicious-package'
 # Fonts
 cask 'font-fenix'
 cask 'font-fauna-one'
+cask 'font-orienta'
 cask 'font-clear-sans'
 cask 'font-fira-sans'
 cask 'font-fira-mono'
