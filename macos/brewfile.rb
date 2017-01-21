@@ -169,7 +169,15 @@ cask 'qlvideo'
 cask 'suspicious-package'
 
 # Fonts
+cask 'font-fenix'
+cask 'font-fauna-one'
+cask 'font-clear-sans'
+cask 'font-fira-sans'
+cask 'font-fira-mono'
 cask 'font-fira-code'
+cask 'font-source-code-pro'
+cask 'font-inconsolata-dz'
+cask 'font-m-plus'
 
 
 # Mac App Store
