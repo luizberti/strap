@@ -10,6 +10,7 @@ set -x LANG   "en_US"
 set -x LC_ALL "en_US.UTF-8"
 set -x EDITOR "vim"
 set -x LESS   "-RFX"
+set -x DOCKER_HIDE_LEGACY_COMMANDS "1"
 
 # Language
 set -x CC        "gcc"
@@ -62,7 +63,7 @@ if [ (uname) = "Darwin" ]
     end
 else
     set -x PATH     ~/.linuxbrew/bin        $PATH
-    set -x MANPATH  ~/.linuxbrew/share/man  $PATH
-    set -x INFOPATH ~/.linuxbrew/share/info $PATH
+    set -x MANPATH  ~/.linuxbrew/share/man  $MANPATH
+    set -x INFOPATH ~/.linuxbrew/share/info $INFOPATH
 end
 
