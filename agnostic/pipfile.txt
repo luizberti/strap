@@ -2,15 +2,15 @@
 ##############
 
 # Language Tooling
-pythonpy
 bpython
-pudb
 flake8
+twine
+pytest
 
 # 3rd Party
+neovim
 awscli
 httpie
-gunicorn
 
 
 # Libraries
@@ -19,32 +19,32 @@ gunicorn
 # Bundles
 boltons
 toolz
-funcy
 boto3
 
 # Formats & Protocols
 pytoml
 ujson
-jsonschema
 oauth2
-jinja2
-neovim
 msgpack-python
 
-# Miscellaneous
-nose2
-faker
+# Datetime
 arrow
 pendulum
 maya
-pygments
-pyserial
+
+# Misc
 pillow
-greenlet
-gevent
-aiofiles
-uvloop
+faker
+retry
+jinja2
+pygments
+humanize
+pyserial
 watchdog
+
+# Async
+uvloop
+aiofiles
 
 
 # Advanced
@@ -53,25 +53,32 @@ watchdog
 # Scientific
 numpy
 scipy
-pandas
-matplotlib
 sympy
+pandas
+dask
+numba
+scikit-learn
+tensorflow
+matplotlib
+seaborn
+bokeh
 jupyter
 
 # Networking
 requests
 pyzmq
-flask
 sanic
+gunicorn
+s3fs
+s3transfer
+pykafka
+pyspark
 
 # Databases
 redis
 hiredis
 pymongo
+cassandra-driver
 asyncpg
 sqlalchemy
-
-# this is a dependency of records, but the pip version of it is broken
-git+https://github.com/kennethreitz/tablib.git
 records
-
