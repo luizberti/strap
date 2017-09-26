@@ -1,20 +1,11 @@
-# Taps
-######
+# Taps & Args
+#############
 
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
-
-# Official
-tap 'homebrew/dupes'     # duplicates of system binaries
-tap 'homebrew/versions'  # versioned formulas
-tap 'homebrew/science'   # scientific use formulas
-tap 'homebrew/python'    # python formulas (use --with-python3)
-#tap 'homebrew/completions'  # formulas that add autocompletion to shell commands
-
-# 3rd Party
-tap 'neovim/neovim'
-tap 'posva/taps'     # for catimg (needs imagemagick)
+tap 'homebrew/science'
+tap 'homebrew/services'
 
 
 # Brews
