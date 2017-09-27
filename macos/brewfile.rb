@@ -57,7 +57,7 @@ cask 'julia'
 cask 'racket'
 brew 'clozure-cl'
 brew 'sbcl'
-cask 'java'  # for Clojure and Scala
+cask 'java'  # for Clojure, Scala, Kafka, Spark, Cassandra, etc
 brew 'leiningen'  # Clojure in disguise
 brew 'scala'
 brew 'sbt'
@@ -67,59 +67,73 @@ brew 'rust', args: ['with-racer']
 # Tooling
 #########
 
-# Dev Tools
+# Utilities
 brew 'ag'
-brew 'ack'
-brew 'tig'
-brew 'hub'
-brew 'doctl'
-brew 'heroku'
-brew 'git-cola'
-brew 'git-plus'
-brew 'git-lfs'
-brew 'vim', args: ['with-python3', 'with-lua', 'with-luajit']
-brew 'neovim'
-brew 'sqlite'
-brew 'redis', restart_service: false
-brew 'vegeta'
-#brew 'gor'
-#brew 'vault'
-
-# CLI Tools
+brew 'ripgrep'
+brew 'xsv'
+brew 'jq'
 brew 'xz'
-brew 'tmux'
-brew 'htop'
-brew 'trash'
-brew 'rename'
-brew 'tree'
-brew 'curl'
-brew 'wget'
-brew 'nmap'  # [NOTE] comes with ncat
-brew 'socat'
-brew 'netcat'
-brew 'netcat6'
-brew 'ngrep'
-brew 'pdfgrep'
-brew 'archey'
-brew 'ranger'
 brew 'p7zip'
 brew 'unrar'
 brew 'moreutils'
 brew 'signify-osx'
-
-#brew 'keybase'
 brew 'tarsnap'
-brew 'gdrive'
-brew 'mackup'
-brew 'mas'
-brew 'youtube-dl'
-brew 'sshuttle'
+brew 'pdfgrep'
+cask 'ngrok'  # TODO seek alternative (ultrahool, localtunnel, localhost.run, frp)
+# TODO maybe webfs?
 
+# Terminal Applications
+brew 'trash'
+brew 'tree'
+brew 'ranger'
+brew 'htop'
+brew 'tmux'
+brew 'tig'
+brew 'git-plus'
+brew 'git-lfs'
+brew 'neovim'
+brew 'vim', args: ['with-python3', 'with-lua', 'with-luajit']
+
+# Networking
+brew 'curl'
+brew 'wget'
+brew 'nmap'
+brew 'socat'
+brew 'netcat'
+brew 'netcat6'
+brew 'ngrep'
+brew 'tcpdump'
+brew 'gor'
+brew 'wrk'
+brew 'vegeta'
+
+# Infrastructure Management
+brew 'doctl'
+brew 'heroku'
+brew 'vault'
+brew 'terraform'
+brew 'packer'
+brew 'docker'
+# TODO maybe kubernetes, mesos, swarm, marathon, flintrock, etc?
+
+# Backends
+brew 'sqlite'
+brew 'redis', restart_service: false
+brew 'kafka', restart_service: false
+brew 'cassandra'
+brew 'apache-spark'
+brew 'postgresql', args: ['with-python3'], restart_service: false
+
+# Media & Graphics
 brew 'ffmpeg', args: ['with-tools', 'with-xz']
 brew 'imagemagick'
 brew 'potrace'
 brew 'webp'
-brew 'catimg'
+
+# Candy
+brew 'mas'
+brew 'archey'
+brew 'youtube-dl'
 
 
 # Casks
