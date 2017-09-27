@@ -8,58 +8,64 @@ tap 'homebrew/science'
 tap 'homebrew/services'
 
 
-# Brews
-#######
+# Base Packages
+###############
 
-# Basics
-brew 'gcc', args: ['with-jit', 'without-multilib']  # multilib causes problems on OpenMP
+# Base Tools
+brew 'gcc'
 brew 'git'
-brew 'grep'
 brew 'pkg-config'
-brew 'coreutils'
-brew 'findutils'
-brew 'binutils'
-brew 'gnu-time'  # [NOTE] invoke with `gtime`
+
+# C Libraries
+brew 'sdl'
+brew 'sdl2'
+brew 'zlib'
+brew 'libsodium'
+brew 'libressl'
+brew 'libuv'
+brew 'jemalloc'
+brew 'hiredis'
+
+# Low Level Tooling
+brew 'nasm'
+brew 'gdb'
+brew 'radare2'
+brew 'valgrind'
+brew 'gcore'
 
 # Shells
 brew 'bash'
 brew 'dash'
 brew 'fish'
 
+# GNU Dupes
+brew 'grep'
+brew 'coreutils'
+brew 'findutils'
+brew 'binutils'
+brew 'gnu-time'
+
 # Langs
-brew 'nasm'
 brew 'python'
 brew 'python3'
 brew 'pypy'
 brew 'pypy3'
-brew 'lua'
-brew 'lua51'
-brew 'lua53'
+brew 'lua@5.1'
+brew 'lua@5.3'
 brew 'luajit'
-#brew 'luarocks'
-#brew 'luvit'
-brew 'node'
-# [TODO] add julia, racket, common-lisp, rust, scala, and go
+cask 'julia'
+cask 'racket'
+brew 'clozure-cl'
+brew 'sbcl'
+cask 'java'  # for Clojure and Scala
+brew 'leiningen'  # Clojure in disguise
+brew 'scala'
+brew 'sbt'
+brew 'rust', args: ['with-racer']
 
-# Libraries
-brew 'sdl'
-brew 'sdl2'
-brew 'zlib'
-brew 'nacl'
-brew 'libsodium'
-brew 'libressl'
-brew 'libmill'
-brew 'libuv'
-brew 'jemalloc'
-brew 'ncurses'
-brew 'hiredis'
 
-# Lang Tools
-brew 'gdb'
-brew 'creduce'
-brew 'radare2'
-brew 'valgrind'
-brew 'gcore'
+# Tooling
+#########
 
 # Dev Tools
 brew 'ag'
