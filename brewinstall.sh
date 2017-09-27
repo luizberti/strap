@@ -22,11 +22,9 @@ echo "(script will be set to verbose until completion)"
 set -v
 
 tempdir=$(mktemp -d)
-cp brewfile.rb $tempdir/Brewfile
-
+cp bundles/brewfile.rb $tempdir/Brewfile
 pushd $tempdir
 brew bundle
 brew cleanup
 brew cask cleanup
 popd
-

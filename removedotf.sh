@@ -19,4 +19,3 @@ rm -f  $HOME/.tmux.conf
 rm -f  $HOME/.editorconfig
 rm -f  $HOME/.vimrc
 rm -rf $HOME/.config/nvim/
-

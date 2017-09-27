@@ -79,4 +79,3 @@ killall Dock
 killall SystemUIServer
 
 exit 0
-

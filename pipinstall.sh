@@ -4,5 +4,4 @@ set -ev
 
 
 sudo pip3 install --upgrade pip
-sudo pip3 install -r pipfile.txt
-
+sudo pip3 install -r bundles/pipfile.txt
