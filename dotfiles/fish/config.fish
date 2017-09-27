@@ -42,7 +42,7 @@ alias crontab "crontab -i"
 alias pubip    "dig +short myip.opendns.com @resolver1.opendns.com"
 alias sniff    "sudo ngrep -d 'en1' -t '^(GET|POST) ' 'tcp and port 80'"
 alias httpdump "sudo tcpdump -i en1 -n -s 0 -w - | grep -a -o -E \"Host\: .*|GET \/.*\""
-alias servedir "sudo python -m SimpleHTTPServer"
+alias servedir "sudo python3 -m http.serve"
 alias ccat     "pygmentize -O style=monokai -f console256 -g"
 alias linesubt "grep -Fxvf"
 alias venv3    "python3 -m venv"
@@ -66,4 +66,3 @@ else
     set -x MANPATH  ~/.linuxbrew/share/man  $MANPATH
     set -x INFOPATH ~/.linuxbrew/share/info $INFOPATH
 end
-
