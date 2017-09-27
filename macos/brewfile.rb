@@ -39,7 +39,7 @@ brew 'luajit'
 #brew 'luarocks'
 #brew 'luvit'
 brew 'node'
-# [TODO] add julia and racket (maybe common-lisp, haskell, rust and go as well)
+# [TODO] add julia, racket, common-lisp, rust, scala, and go
 
 # Libraries
 brew 'sdl'
@@ -108,7 +108,6 @@ brew 'mackup'
 brew 'mas'
 brew 'youtube-dl'
 brew 'sshuttle'
-brew 'thefuck'  # [NOTE] needs a shell add-on as well
 
 brew 'ffmpeg', args: ['with-tools', 'with-xz']
 brew 'imagemagick'
@@ -123,84 +122,79 @@ brew 'catimg'
 # Basics
 cask 'google-chrome'
 cask 'firefox'
+cask 'whatsapp'
+cask 'gitter'
 cask 'transmission'
 cask 'spotify'
-cask 'whatsapp'
 cask 'vlc'
+cask 'geogebra'
 
 # Utilities
-cask 'appcleaner'
-cask 'bartender'
 cask 'moom'
+cask 'bartender'
+cask 'appcleaner'
+cask 'etcher'
+cask 'calibre'
 cask 'colorpicker-skalacolor'
-cask 'airtable'
-cask 'notion'
-#cask 'handbrake'
+cask 'razer-synapse'
+cask 'logitech-options'
+cask 'wacom-intuos-tablet'
 
-# Designer
+# Design
 cask 'sketch'
 cask 'blender'
 
-# Developer
+# Development
 cask 'dash'
-cask 'atom'
 cask 'sublime-text'
 cask 'visual-studio-code'
 cask 'codekit'
-cask 'transmit'
 cask 'virtualbox'
 cask 'vagrant'
-cask 'iterm2'
 
 # QuickLook Plugins
+cask 'qlstephen'
 cask 'quicklook-json'
+cask 'quicklook-csv'
 cask 'qlimagesize'
 cask 'webpquicklook'
 cask 'qlvideo'
 cask 'suspicious-package'
+cask 'betterzipql'
 
-# Fonts
-cask 'font-fenix'
-cask 'font-fauna-one'
-cask 'font-orienta'
-cask 'font-clear-sans'
-cask 'font-fira-sans'
+# Programming Fonts
 cask 'font-fira-mono'
 cask 'font-fira-code'
 cask 'font-source-code-pro'
 cask 'font-inconsolata-dz'
 cask 'font-m-plus'
 
+# Design Fonts
+# TODO
+
 
 # Mac App Store
 ###############
 
 # Basics
-mas 'Radium', id: 597611879
-mas 'Ulysses', id: 623795237
-mas 'Pages', id: 409201541
-mas 'Clear', id: 504544917
-mas 'Slack', id: 803453959
+mas '1Password', id: 443987910
 mas 'Telegram', id: 747648890
-mas 'Quiver', id: 866773894
+mas 'Slack', id: 803453959
+mas 'Clear', id: 504544917
+mas 'Pages', id: 409201541
+mas 'Ulysses', id: 623795237
 
 # Utilities
-mas 'The Unarchiver', id: 425424353
 mas 'Caffeine', id: 411246225
 mas 'PopClip', id: 445189367
-mas 'Calcbot', id: 931657367
-mas '1Password', id: 443987910
 mas 'Jumpshare', id: 889922906
-
-# Developer
-mas 'Haskell', id: 841285201
+mas 'The Unarchiver', id: 425424353
 mas 'Kaleidoscope', id: 587512244
 cask 'ksdiff'
 
-# Designer
+# Design
+mas 'Drop', id: 1173932628
 mas 'Affinity Designer', id: 824171161
 mas 'Pixelmator', id: 407963104
 mas 'Acorn', id: 1019272813
 mas 'Mischief', id: 928430260
-#mas 'xScope', id: 889428659
-
