@@ -162,6 +162,7 @@ cask 'geogebra'
 # Utilities
 cask 'moom'
 cask 'bartender'
+cask 'alfred'
 cask 'appcleaner'
 cask 'etcher'
 cask 'calibre'
@@ -172,6 +173,7 @@ cask 'wacom-intuos-tablet'
 
 # Design
 cask 'sketch'
+cask 'gimp'
 cask 'blender'
 
 # Development
