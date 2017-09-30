@@ -44,6 +44,7 @@ brew 'coreutils'
 brew 'findutils'
 brew 'binutils'
 brew 'gnu-time'
+brew 'gawk'
 
 # Langs
 brew 'python'
@@ -73,12 +74,17 @@ brew 'ripgrep'
 brew 'xsv'
 brew 'jq'
 brew 'xz'
+brew 'rzip'
+brew 'lrzip'
+brew 'zpaq'
 brew 'p7zip'
 brew 'unrar'
 brew 'moreutils'
 brew 'signify-osx'
 brew 'tarsnap'
+brew 'pstree'
 brew 'pdfgrep'
+brew 'entr'
 cask 'ngrok'  # TODO seek alternative (ultrahool, localtunnel, localhost.run, frp)
 # TODO maybe webfs?
 
@@ -108,6 +114,7 @@ brew 'wrk'
 brew 'vegeta'
 
 # Infrastructure Management
+brew 's3cmd'
 brew 'doctl'
 brew 'heroku'
 brew 'vault'
@@ -128,12 +135,14 @@ brew 'postgresql', args: ['with-python3'], restart_service: false
 brew 'ffmpeg', args: ['with-tools', 'with-xz']
 brew 'imagemagick'
 brew 'potrace'
+brew 'pngquant'
 brew 'webp'
 
 # Candy
 brew 'mas'
-brew 'archey'
+brew 'buku'
 brew 'youtube-dl'
+brew 'archey'
 
 
 # Casks
