@@ -94,6 +94,7 @@ brew 'tree'
 brew 'ranger'
 brew 'htop'
 brew 'tmux'
+brew 'reattach-to-user-namespace'  # pbcopy and pasting on tmux
 brew 'tig'
 brew 'git-plus'
 brew 'git-lfs'
