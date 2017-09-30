@@ -6,6 +6,8 @@ bpython
 flake8
 twine
 pytest
+invoke
+# TODO add venv management stuff
 
 # 3rd Party
 neovim
@@ -26,6 +28,7 @@ pytoml
 ujson
 oauth2
 msgpack-python
+fastparquet
 
 # Datetime
 arrow
@@ -44,6 +47,7 @@ watchdog
 
 # Async
 uvloop
+curio
 aiofiles
 
 
@@ -57,8 +61,11 @@ sympy
 pandas
 dask
 numba
+nltk
+spacy
 scikit-learn
 tensorflow
+nimblenet
 matplotlib
 seaborn
 bokeh
@@ -67,7 +74,9 @@ jupyter
 # Networking
 requests
 pyzmq
+celery
 sanic
+aiocache
 gunicorn
 s3fs
 s3transfer
@@ -75,8 +84,10 @@ pykafka
 pyspark
 
 # Databases
+gspread
 redis
 hiredis
+aioredis
 pymongo
 cassandra-driver
 asyncpg
