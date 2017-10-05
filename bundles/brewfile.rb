@@ -62,7 +62,6 @@ cask 'java'  # for Clojure, Scala, Kafka, Spark, Cassandra, etc
 brew 'leiningen'  # Clojure in disguise
 brew 'scala'
 brew 'sbt'
-brew 'rust', args: ['with-racer']
 
 
 # Tooling
@@ -86,7 +85,7 @@ brew 'pstree'
 brew 'pdfgrep'
 brew 'entr'
 cask 'ngrok'  # TODO seek alternative (ultrahool, localtunnel, localhost.run, frp)
-# TODO maybe webfs?
+# TODO maybe webfs or cowboy?
 
 # Terminal Applications
 brew 'trash'
@@ -96,6 +95,7 @@ brew 'htop'
 brew 'tmux'
 brew 'reattach-to-user-namespace'  # pbcopy and pasting on tmux
 brew 'tig'
+brew 'kryptco/tap/kr'
 brew 'git-plus'
 brew 'git-lfs'
 brew 'neovim'
@@ -213,11 +213,13 @@ mas '1Password', id: 443987910
 mas 'Telegram', id: 747648890
 mas 'Slack', id: 803453959
 mas 'Clear', id: 504544917
+mas 'Things3', id: 904280696
 mas 'Pages', id: 409201541
 mas 'Ulysses', id: 623795237
 
 # Utilities
-mas 'Caffeine', id: 411246225
+mas 'Amphetamine', id: 937984704
+mas 'iStat Mini', id: 927292435
 mas 'PopClip', id: 445189367
 mas 'Jumpshare', id: 889922906
 mas 'The Unarchiver', id: 425424353
