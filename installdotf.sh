@@ -1,6 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/sh -e
 cd -P -- "$(dirname -- "$0")"
-set -e
 
 
 # Path Maker
@@ -26,11 +25,3 @@ cp -f dotfiles/tmux.conf        $HOME/.tmux.conf
 cp -f dotfiles/editorconfig.ini $HOME/.editorconfig
 cp -f dotfiles/vimrc.vim        $HOME/.vimrc
 cp -f dotfiles/nvimrc.vim       $HOME/.config/nvim/init.vim
-
-
-# Install vim-plug
-read -p "Press ENTER to install vim-plug, or press ^C to abort... "
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs \
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim

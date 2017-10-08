@@ -1,9 +1,4 @@
-#!/usr/bin/env bash
-cd -P -- "$(dirname -- "$0")"
-set -e
-
-
-# Removes Dotfiles
+#!/bin/sh -ev
 rm -f  $HOME/.bash_aliases
 rm -f  $HOME/.bash_profile
 rm -f  $HOME/.bash_prompt
