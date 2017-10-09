@@ -91,9 +91,13 @@ cask 'ngrok'  # TODO seek alternative (ultrahool, localtunnel, localhost.run, fr
 brew 'trash'
 brew 'tree'
 brew 'ranger'
+brew 'exa'
+brew 'fd'
+brew 'fzf'
 brew 'htop'
 brew 'tmux'
 brew 'reattach-to-user-namespace'  # pbcopy and pasting on tmux
+brew 'tokei'
 brew 'tig'
 brew 'kryptco/tap/kr'
 brew 'git-plus'
