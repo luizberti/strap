@@ -37,6 +37,8 @@ brew 'gcore'
 brew 'bash'
 brew 'dash'
 brew 'fish'
+brew 'elvish'
+brew 'mosh'
 
 # GNU Dupes
 brew 'grep'
@@ -54,6 +56,7 @@ brew 'pypy3'
 brew 'lua@5.1'
 brew 'lua@5.3'
 brew 'luajit'
+brew 'luvit'
 cask 'julia'
 cask 'racket'
 brew 'clozure-cl'
@@ -126,6 +129,7 @@ brew 'vault'
 brew 'terraform'
 brew 'packer'
 brew 'docker'
+brew 'docker-machine'
 # TODO maybe kubernetes, mesos, swarm, marathon, flintrock, etc?
 
 # Backends
