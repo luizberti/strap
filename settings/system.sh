@@ -1,20 +1,4 @@
-#!/usr/bin/env bash
-cd -P -- "$(dirname -- "$0")"
-set -e
-
-
-###############
-# SCRIPT INIT #
-###############
-
-# Ask for Privileges Upfront & Keep Alive
-sudo -v || exit 1
-while true; do sudo -n true; sleep 60; kill -0 "$$" || exit; done 2>/dev/null &
-
-
-###############
-# OSX / Setup #
-###############
+set -ex
 
 # System
 systemsetup -settimezone "America/Sao_Paulo" > /dev/null  # Set Timezone to GMT -3 (`systemsetup -listtimezones` for other values)
@@ -41,21 +25,13 @@ defaults write com.apple.dock workspaces-auto-swoosh -bool NO  # Don't Auto-Swit
 defaults write com.apple.dock mru-spaces -bool false  # Don’t Rearrange Spaces by Recent Usage
 defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false  # Disable System-Wide Resume Windows
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false  # Disable Bizarre Scrolling
+defaults write com.apple.dock autohide -bool true
+defaults write com.apple.dock autohide-delay -float 0
+defaults write com.apple.dock minimize-to-application -bool true
 
 # Disk Utility
 defaults write com.apple.DiskUtility DUDebugMenuEnabled -bool true  # Enable the debug menu in Disk Utility
 defaults write com.apple.DiskUtility advanced-image-options -bool true  # Enable Advanced Options in Disk Utility
-
-# Dock
-defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'  # Adds Spacer Tiles To Dock (Left)
-defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'  # Adds Spacer Tiles To Dock (Right)
-defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
-defaults write com.apple.dock autohide -bool true  # Autohide Dock with no Delay, Minimizes to App Icon
-defaults write com.apple.dock autohide-delay -float 0
-defaults write com.apple.dock minimize-to-application -bool true
 
 # Finder
 defaults write NSGlobalDomain AppleShowAllExtensions -bool true  # Show all Filename Extensions
@@ -65,17 +41,7 @@ defaults write NSGlobalDomain com.apple.springing.enabled -bool true  # Enables 
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true  # Avoid Creating .DS_Stores on Network Volumes
 
 
-#################
-# GRACEFUL EXIT #
-#################
-
-# Warnings
-echo "Remember to set a hostname in System Preferences..."
-echo "Remember to customize energy saving settings in System Preferences..."
-
 # Restarts Modified Processes
 killall Finder
 killall Dock
 killall SystemUIServer
-
-exit 0
