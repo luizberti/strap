@@ -26,45 +26,34 @@ brew 'libuv'
 brew 'jemalloc'
 brew 'hiredis'
 
-# Low Level Tooling
-brew 'nasm'
-brew 'gdb'
-brew 'radare2'
-brew 'valgrind'
-brew 'gcore'
-
 # Shells
 brew 'bash'
 brew 'dash'
 brew 'fish'
-brew 'elvish'
-brew 'mosh'
 
-# GNU Dupes
+# Core Tools
 brew 'grep'
 brew 'coreutils'
 brew 'findutils'
 brew 'binutils'
 brew 'gnu-time'
 brew 'gawk'
+brew 'gcore'
 
 # Langs
 brew 'python'
-brew 'python3'
+brew 'python@2'
 brew 'pypy'
 brew 'pypy3'
 brew 'lua@5.1'
 brew 'lua@5.3'
 brew 'luajit'
-brew 'luvit'
 cask 'julia'
+brew 'elixir'
+brew 'go'
 cask 'racket'
 brew 'clozure-cl'
 brew 'sbcl'
-cask 'java'  # for Clojure, Scala, Kafka, Spark, Cassandra, etc
-brew 'leiningen'  # Clojure in disguise
-brew 'scala'
-brew 'sbt'
 
 
 # Tooling
@@ -83,30 +72,9 @@ brew 'p7zip'
 brew 'unrar'
 brew 'moreutils'
 brew 'signify-osx'
-brew 'tarsnap'
 brew 'pstree'
 brew 'pdfgrep'
 brew 'entr'
-cask 'ngrok'  # TODO seek alternative (ultrahool, localtunnel, localhost.run, frp)
-# TODO maybe webfs or cowboy?
-
-# Terminal Applications
-brew 'trash'
-brew 'tree'
-brew 'ranger'
-brew 'exa'
-brew 'fd'
-brew 'fzf'
-brew 'htop'
-brew 'tmux'
-brew 'reattach-to-user-namespace'  # pbcopy and pasting on tmux
-brew 'tokei'
-brew 'tig'
-brew 'kryptco/tap/kr'
-brew 'git-plus'
-brew 'git-lfs'
-brew 'neovim'
-brew 'vim', args: ['with-python3', 'with-lua', 'with-luajit']
 
 # Networking
 brew 'curl'
@@ -117,9 +85,30 @@ brew 'netcat'
 brew 'netcat6'
 brew 'ngrep'
 brew 'tcpdump'
-brew 'gor'
 brew 'wrk'
-brew 'vegeta'
+brew 'traefik'
+
+# Terminal Applications
+brew 'tarsnap'
+brew 'tree'
+brew 'ranger'
+brew 'fd'
+brew 'fzf'
+brew 'tokei'
+brew 'tig'
+brew 'htop'
+brew 'tmux'
+brew 'reattach-to-user-namespace'  # pbcopy and pasting on tmux
+brew 'kryptco/tap/kr'
+brew 'git-plus'
+brew 'git-lfs'
+cask 'ngrok'  # TODO seek alternative (ultrahool, localtunnel, localhost.run, frp)
+
+# Development
+brew 'emacs'
+brew 'vim', args: ['with-python3', 'with-lua', 'with-luajit']
+brew 'neovim'
+brew 'radare2'
 
 # Infrastructure Management
 brew 's3cmd'
@@ -127,17 +116,10 @@ brew 'doctl'
 brew 'heroku'
 brew 'vault'
 brew 'terraform'
-brew 'packer'
-brew 'docker'
-brew 'docker-machine'
-# TODO maybe kubernetes, mesos, swarm, marathon, flintrock, etc?
 
 # Backends
 brew 'sqlite'
 brew 'redis', restart_service: false
-brew 'kafka', restart_service: false
-brew 'cassandra'
-brew 'apache-spark'
 brew 'postgresql', args: ['with-python3'], restart_service: false
 
 # Media & Graphics
@@ -150,6 +132,7 @@ brew 'webp'
 # Candy
 brew 'mas'
 brew 'buku'
+brew 'jrnl'
 brew 'youtube-dl'
 brew 'archey'
 
@@ -158,14 +141,20 @@ brew 'archey'
 #######
 
 # Basics
-cask 'google-chrome'
 cask 'firefox'
+cask 'google-chrome'
+cask 'transmission'
+cask 'vlc'
+cask 'spotify'
 cask 'whatsapp'
 cask 'gitter'
-cask 'transmission'
-cask 'spotify'
-cask 'vlc'
-cask 'geogebra'
+mas  'Slack', id: 803453959
+mas  'Telegram', id: 747648890
+mas  'Clear', id: 504544917
+mas  'Things3', id: 904280696
+mas  'Pages', id: 409201541
+mas  '1Password', id: 443987910
+mas  'Jumpshare', id: 889922906
 
 # Utilities
 cask 'moom'
@@ -174,23 +163,28 @@ cask 'alfred'
 cask 'appcleaner'
 cask 'etcher'
 cask 'calibre'
+cask 'geogebra'
 cask 'colorpicker-skalacolor'
-cask 'razer-synapse'
-cask 'logitech-options'
-cask 'wacom-intuos-tablet'
-
-# Design
-cask 'sketch'
-cask 'gimp'
-cask 'blender'
+mas  'Amphetamine', id: 937984704
+mas  'iStat Mini', id: 927292435
+mas  'PopClip', id: 445189367
+mas  'The Unarchiver', id: 425424353
 
 # Development
 cask 'dash'
 cask 'sublime-text'
 cask 'visual-studio-code'
 cask 'codekit'
-cask 'virtualbox'
-cask 'vagrant'
+cask 'docker'
+cask 'ksdiff'
+mas  'Kaleidoscope', id: 587512244
+
+# Design
+cask 'sketch'
+cask 'gimp'
+cask 'blender'
+mas  'Pixelmator', id: 407963104
+mas  'Mischief', id: 928430260
 
 # QuickLook Plugins
 cask 'qlstephen'
@@ -208,35 +202,3 @@ cask 'font-fira-code'
 cask 'font-source-code-pro'
 cask 'font-inconsolata-dz'
 cask 'font-m-plus'
-
-# Design Fonts
-# TODO
-
-
-# Mac App Store
-###############
-
-# Basics
-mas '1Password', id: 443987910
-mas 'Telegram', id: 747648890
-mas 'Slack', id: 803453959
-mas 'Clear', id: 504544917
-mas 'Things3', id: 904280696
-mas 'Pages', id: 409201541
-mas 'Ulysses', id: 623795237
-
-# Utilities
-mas 'Amphetamine', id: 937984704
-mas 'iStat Mini', id: 927292435
-mas 'PopClip', id: 445189367
-mas 'Jumpshare', id: 889922906
-mas 'The Unarchiver', id: 425424353
-mas 'Kaleidoscope', id: 587512244
-cask 'ksdiff'
-
-# Design
-mas 'Drop', id: 1173932628
-mas 'Affinity Designer', id: 824171161
-mas 'Pixelmator', id: 407963104
-mas 'Acorn', id: 1019272813
-mas 'Mischief', id: 928430260
