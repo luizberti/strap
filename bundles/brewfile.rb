@@ -148,10 +148,12 @@ cask 'vlc'
 cask 'spotify'
 cask 'whatsapp'
 cask 'gitter'
+mas  'Spark', id: 1176895641
 mas  'Slack', id: 803453959
 mas  'Telegram', id: 747648890
 mas  'Clear', id: 504544917
 mas  'Things3', id: 904280696
+mas  'iA Writer', id: 775737590
 mas  'Pages', id: 409201541
 mas  '1Password', id: 443987910
 mas  'Jumpshare', id: 889922906
@@ -175,6 +177,7 @@ cask 'dash'
 cask 'sublime-text'
 cask 'visual-studio-code'
 cask 'codekit'
+cask 'insomnia'
 cask 'docker'
 cask 'ksdiff'
 mas  'Kaleidoscope', id: 587512244
@@ -202,3 +205,4 @@ cask 'font-fira-code'
 cask 'font-source-code-pro'
 cask 'font-inconsolata-dz'
 cask 'font-m-plus'
+cask 'font-ibm-plex'
