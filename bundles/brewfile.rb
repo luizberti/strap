@@ -146,11 +146,11 @@ cask 'google-chrome'
 cask 'transmission'
 cask 'vlc'
 cask 'spotify'
-cask 'whatsapp'
 cask 'gitter'
 mas  'Spark', id: 1176895641
 mas  'Slack', id: 803453959
 mas  'Telegram', id: 747648890
+mas  'WhatsApp', id: 1147396723
 mas  'Clear', id: 504544917
 mas  'Things3', id: 904280696
 mas  'iA Writer', id: 775737590
@@ -186,7 +186,7 @@ mas  'Kaleidoscope', id: 587512244
 cask 'sketch'
 cask 'gimp'
 cask 'blender'
-mas  'Pixelmator', id: 407963104
+mas  'Pixelmator Pro', id: 1289583905
 mas  'Mischief', id: 928430260
 
 # QuickLook Plugins
