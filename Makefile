@@ -25,11 +25,7 @@ rust:
 brew:
 	mkdir -p /tmp/strap
 	cp bundles/brewfile.rb /tmp/strap/Brewfile
-	cd /tmp/strap
-	brew bundle
-	brew cleanup
-	brew cask cleanup
-	cd -
+	cd /tmp/strap && brew bundle && brew cleanup && brew cask cleanup
 
 pip:
 	sudo pip3 install --upgrade pip
@@ -58,6 +54,14 @@ dotf:
 	cp -f dotfiles/editorconfig.ini ~/.editorconfig
 	cp -f dotfiles/vimrc.vim        ~/.vimrc
 	cp -f dotfiles/nvimrc.vim       ~/.config/nvim/init.vim
+
+oksh:
+	mkdir -p /tmp/strap
+	wget -O /tmp/strap/oksh.tar.gz https://github.com/ibara/oksh/archive/OpenBSD-6.3.tar.gz
+	mkdir -p /tmp/strap/oksh && tar -xvf /tmp/strap/oksh.tar.gz -C /tmp/strap/oksh --strip-components 1
+	cd /tmp/strap/oksh && ./configure && make
+	@echo "Enter password to install oksh, or ^C to abort this step:"
+	-cd /tmp/strap/oksh && sudo make install
 
 
 ############
