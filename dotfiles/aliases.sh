@@ -1,4 +1,6 @@
+alias ll='ls -l'
 alias lsa='ls -A'
+alias lla='ls -lA'
 alias tra="tree -a -F -I '.git|.hg|.DS_Store|.sass-cache'"
 alias tree='tree --dirsfirst -F'
 
