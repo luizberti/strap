@@ -1,7 +1,7 @@
 set nocompatible
 
 " Interface
-set nu
+set number
 set ruler
 hi Visual cterm=NONE ctermbg=White ctermfg=Black
 highlight clear SignColumn
@@ -15,7 +15,8 @@ set smartcase
 set backspace=indent,eol,start
 set history=1000
 set undolevels=1000
-set wildignore=*.swp,*.bak,*.pyc,*.class,*.rdb,*.aof
+set wildignore=*.swp,*.bak,*.pyc,*.class,.sass_cache,__pycache__,.DS_Store,.git
+set wildignore+=*.o,*.so,*.rdb,*.aof,*.jar
 set title
 
 " :w! Will Force File to Save
@@ -29,9 +30,6 @@ set smarttab
 set expandtab
 set autoindent
 
-" Restore Cursor Position to Before Jump
-autocmd BufRead,BufWrite * if ! &bin | silent! %s/\s\+$//ge | endif
-
 
 " Smoother Commanding and Exit to Normal Mode
 nnoremap ; :
@@ -43,7 +41,4 @@ nnoremap <esc>^[ <esc>^[
 
 " Toggle Paste Mode on <F2>
 set pastetoggle=<F2>
-
-" Pointer Operator Shortcut
-inoremap <C-L> <space>-><space>
 

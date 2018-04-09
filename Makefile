@@ -61,7 +61,8 @@ oksh:
 	mkdir -p /tmp/strap/oksh && tar -xvf /tmp/strap/oksh.tar.gz -C /tmp/strap/oksh --strip-components 1
 	cd /tmp/strap/oksh && ./configure && make
 	@echo "Enter password to install oksh, or ^C to abort this step:"
-	-cd /tmp/strap/oksh && sudo make install
+	cd /tmp/strap/oksh && sudo make install
+	sudo echo $$(which oksh) >> /etc/shells
 
 
 ############
