@@ -8,7 +8,7 @@ export PATH=/usr/local/bin:/usr/local/sbin:$PATH
 export PATH=$HOME/.cargo/bin:$PATH
 
 
-if ! [ -x $(command -v go) ]; then
+if [ -x $(command -v go) ]; then
     export GOROOT=$(go env GOROOT)
     export GOPATH=$(go env GOPATH)
     export GOBIN=$GOPATH/bin
