@@ -27,3 +27,7 @@ elif [ $(uname -s) == 'FreeBSD' ]; then :;
 elif [ $(uname -s) == 'OpenBSD' ]; then :;
 fi
 
+
+test -e ~/.aliases     && . ~/.aliases
+test -e ~/.credentials && . ~/.credentials
+
