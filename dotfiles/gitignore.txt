@@ -17,9 +17,19 @@ Thumbs.db
 *.log
 *.swp
 .idea/
+.vscode/
 *.codekit
 .sass-cache/
+.cache/
 node_modules/
+_build/
+cover/
+deps/
+.fetch
+erl_crash.dump
+*.ez
+*.tar
+*.tar.*
 
 # Python
 __pycache__/

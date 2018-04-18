@@ -12,3 +12,5 @@ alias gs='git status'
 alias tiga='tig --all'
 alias ccat='pygmentize -O style=monokai -f console256 -g'
 
+alias docker-prune='docker ps -qa --filter status=exited | xargs docker rm'
+
