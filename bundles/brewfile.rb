@@ -86,6 +86,7 @@ brew 'netcat6'
 brew 'ngrep'
 brew 'tcpdump'
 brew 'wrk'
+brew 'vegeta'
 brew 'traefik'
 
 # Terminal Applications
