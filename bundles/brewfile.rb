@@ -173,6 +173,7 @@ mas  'PopClip', id: 445189367
 mas  'The Unarchiver', id: 425424353
 
 # Development
+cask 'kitty'
 cask 'dash'
 cask 'sublime-text'
 cask 'visual-studio-code'
