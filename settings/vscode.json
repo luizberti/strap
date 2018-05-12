@@ -1,0 +1,16 @@
+{
+    "editor.fontFamily": "Fira Code, Menlo, Monaco, 'Courier New', monospace",
+    "sublimeTextKeymap.promptV3Features": true,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.formatOnPaste": true,
+    "workbench.colorTheme": "Material Theme",
+    "materialTheme.cache.workbench.settings": {
+        "accentPrevious": "Bright Teal",
+        "themeColours": "Palenight"
+    },
+    "workbench.iconTheme": "vs-minimal",
+    "editor.snippetSuggestions": "none",
+    "explorer.confirmDelete": false,
+    "explorer.confirmDragAndDrop": false,
+}
