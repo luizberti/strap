@@ -93,3 +93,4 @@ cassandra-driver
 asyncpg
 sqlalchemy
 records
+s4cmd

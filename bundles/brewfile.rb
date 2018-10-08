@@ -68,6 +68,7 @@ brew 'xz'
 brew 'rzip'
 brew 'lrzip'
 brew 'zpaq'
+brew 'zstd'
 brew 'p7zip'
 brew 'unrar'
 brew 'moreutils'
@@ -99,11 +100,9 @@ brew 'tokei'
 brew 'tig'
 brew 'htop'
 brew 'tmux'
-brew 'reattach-to-user-namespace'  # pbcopy and pasting on tmux
 brew 'kryptco/tap/kr'
 brew 'git-plus'
 brew 'git-lfs'
-cask 'ngrok'  # TODO seek alternative (ultrahool, localtunnel, localhost.run, frp)
 
 # Development
 brew 'emacs'
@@ -132,9 +131,9 @@ brew 'webp'
 
 # Candy
 brew 'mas'
-brew 'buku'
-brew 'jrnl'
-brew 'youtube-dl'
+#brew 'buku'
+#brew 'jrnl'
+#brew 'youtube-dl'
 brew 'archey'
 
 
@@ -147,16 +146,14 @@ cask 'google-chrome'
 cask 'transmission'
 cask 'vlc'
 cask 'spotify'
-cask 'gitter'
 mas  'Spark', id: 1176895641
 mas  'Slack', id: 803453959
 mas  'Telegram', id: 747648890
 mas  'WhatsApp', id: 1147396723
-mas  'Clear', id: 504544917
 mas  'Things3', id: 904280696
 mas  'iA Writer', id: 775737590
 mas  'Pages', id: 409201541
-mas  '1Password', id: 443987910
+mas  '1Password 7', id: 1333542190
 mas  'Jumpshare', id: 889922906
 
 # Utilities
@@ -165,7 +162,7 @@ cask 'bartender'
 cask 'alfred'
 cask 'appcleaner'
 cask 'etcher'
-cask 'calibre'
+#cask 'calibre'
 cask 'geogebra'
 cask 'colorpicker-skalacolor'
 mas  'Amphetamine', id: 937984704
@@ -176,7 +173,7 @@ mas  'The Unarchiver', id: 425424353
 # Development
 cask 'kitty'
 cask 'dash'
-cask 'sublime-text'
+#cask 'sublime-text'
 cask 'visual-studio-code'
 cask 'codekit'
 cask 'insomnia'
@@ -189,7 +186,7 @@ cask 'sketch'
 cask 'gimp'
 cask 'blender'
 mas  'Pixelmator Pro', id: 1289583905
-mas  'Mischief', id: 928430260
+#mas  'Mischief', id: 928430260
 
 # QuickLook Plugins
 cask 'qlstephen'
