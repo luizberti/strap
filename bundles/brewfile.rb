@@ -182,9 +182,9 @@ cask 'ksdiff'
 mas  'Kaleidoscope', id: 587512244
 
 # Design
-cask 'sketch'
-cask 'gimp'
+#cask 'gimp'
 cask 'blender'
+cask 'sketch'
 mas  'Pixelmator Pro', id: 1289583905
 #mas  'Mischief', id: 928430260
 
