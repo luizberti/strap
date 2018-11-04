@@ -65,17 +65,22 @@ brew 'ripgrep'
 brew 'xsv'
 brew 'jq'
 brew 'xz'
-brew 'rzip'
-brew 'lrzip'
-brew 'zpaq'
 brew 'zstd'
 brew 'p7zip'
 brew 'unrar'
 brew 'moreutils'
 brew 'signify-osx'
-brew 'pstree'
 brew 'pdfgrep'
+brew 'tree'
 brew 'entr'
+brew 'fd'
+brew 'fzf'
+brew 'htop'
+brew 'tmux'
+brew 'tig'
+brew 'git-plus'
+brew 'git-lfs'
+brew 'tarsnap'
 
 # Networking
 brew 'curl'
@@ -90,55 +95,28 @@ brew 'wrk'
 brew 'vegeta'
 brew 'traefik'
 
-# Terminal Applications
-brew 'tarsnap'
-brew 'tree'
-brew 'ranger'
-brew 'fd'
-brew 'fzf'
-brew 'tokei'
-brew 'tig'
-brew 'htop'
-brew 'tmux'
-brew 'kryptco/tap/kr'
-brew 'git-plus'
-brew 'git-lfs'
-
 # Development
 brew 'emacs'
 brew 'vim', args: ['with-python3', 'with-lua', 'with-luajit']
 brew 'neovim'
 brew 'radare2'
-
-# Infrastructure Management
-brew 's3cmd'
 brew 'doctl'
 brew 'heroku'
 brew 'vault'
 brew 'terraform'
-
-# Backends
 brew 'sqlite'
 brew 'redis', restart_service: false
 brew 'postgresql', args: ['with-python3'], restart_service: false
 
-# Media & Graphics
-brew 'ffmpeg', args: ['with-tools', 'with-xz']
-brew 'imagemagick'
-brew 'potrace'
-brew 'pngquant'
-brew 'webp'
-
 # Candy
 brew 'mas'
-#brew 'buku'
-#brew 'jrnl'
-#brew 'youtube-dl'
-brew 'archey'
+brew 'buku'
+brew 'jrnl'
+brew 'youtube-dl'
 
 
-# Casks
-#######
+# Desktop
+#########
 
 # Basics
 cask 'firefox'
@@ -162,8 +140,6 @@ cask 'bartender'
 cask 'alfred'
 cask 'appcleaner'
 cask 'etcher'
-#cask 'calibre'
-cask 'geogebra'
 cask 'colorpicker-skalacolor'
 mas  'Amphetamine', id: 937984704
 mas  'iStat Mini', id: 927292435
@@ -173,7 +149,6 @@ mas  'The Unarchiver', id: 425424353
 # Development
 cask 'kitty'
 cask 'dash'
-#cask 'sublime-text'
 cask 'visual-studio-code'
 cask 'codekit'
 cask 'insomnia'
@@ -182,26 +157,12 @@ cask 'ksdiff'
 mas  'Kaleidoscope', id: 587512244
 
 # Design
-#cask 'gimp'
 cask 'blender'
 cask 'sketch'
 mas  'Pixelmator Pro', id: 1289583905
-#mas  'Mischief', id: 928430260
 
-# QuickLook Plugins
-cask 'qlstephen'
-cask 'quicklook-json'
-cask 'quicklook-csv'
-cask 'qlimagesize'
-cask 'webpquicklook'
-cask 'qlvideo'
-cask 'suspicious-package'
-cask 'betterzipql'
-
-# Programming Fonts
+# Fonts
 cask 'font-fira-mono'
 cask 'font-fira-code'
-cask 'font-source-code-pro'
-cask 'font-inconsolata-dz'
-cask 'font-m-plus'
 cask 'font-ibm-plex'
+
