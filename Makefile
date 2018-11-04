@@ -4,30 +4,24 @@ clean:
 	rm -rf /tmp/strap
 
 install:
-	mkdir -p ~/.config/nvim/
-	mkdir -p ~/.config/fish/functions/
 	cp -f dotfiles/aliases.sh     ~/.aliases
+	cp -f dotfiles/posixrc.sh     ~/.bash_profile
 	cp -f dotfiles/posixrc.sh     ~/.bashrc
 	cp -f dotfiles/posixrc.sh     ~/.kshrc
+	cp -f dotfiles/posixrc.sh     ~/.profile
 	cp -f dotfiles/gitconfig.ini  ~/.gitconfig
 	cp -f dotfiles/gitignore.txt  ~/.gitignore
-	cp -f dotfiles/tmux.conf      ~/.tmux.conf
 	cp -f dotfiles/vimrc.vim      ~/.vimrc
-	printf '. .aliases\n. .kshrc\n'            > ~/.profile
-	printf 'source .aliases\nsource .bashrc\n' > ~/.bash_profile
 
 uninstall:
-	rm -rf ~/.config/nvim/
-	rm -rf ~/.config/fish/
 	rm -f  ~/.aliases
+	rm -f  ~/.bash_profile
 	rm -f  ~/.bashrc
 	rm -f  ~/.kshrc
+	rm -f  ~/.profile
 	rm -f  ~/.gitconfig
 	rm -f  ~/.gitignore
-	rm -f  ~/.tmux.conf
 	rm -f  ~/.vimrc
-	rm -f  ~/.profile
-	rm -f  ~/.bash_profile
 
 
 ############
@@ -48,14 +42,12 @@ nix:
 rust:
 	curl -sSf https://sh.rustup.rs | sh
 
-oksh:
-	mkdir -p /tmp/strap
-	wget -O /tmp/strap/oksh.tar.gz https://github.com/ibara/oksh/archive/OpenBSD-6.3.tar.gz
-	mkdir -p /tmp/strap/oksh && tar -xvf /tmp/strap/oksh.tar.gz -C /tmp/strap/oksh --strip-components 1
-	cd /tmp/strap/oksh && ./configure && make
-	@read -p "ENTER to install oksh (you need sudo), or ^C to abort this step:"
-	cd /tmp/strap/oksh && sudo make install
-	sudo echo $$(which oksh) >> /etc/shells
+editors:
+	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	vim +PlugInstall +qall
+	nvim +PlugInstall +qall
+	-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 
 ###########
@@ -71,13 +63,6 @@ brew:
 pip:
 	sudo pip3 install --upgrade pip
 	sudo pip3 install -r bundles/pipfile.txt
-
-editors:
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	vim +PlugInstall +qall
-	nvim +PlugInstall +qall
-	-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 
 
 ##########
@@ -99,3 +84,4 @@ ltile:
 	@test $$(uname -s) == 'Darwin'
 	defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 	killall Dock
+

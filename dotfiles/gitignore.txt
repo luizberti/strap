@@ -9,9 +9,9 @@
 .localized
 .DS_Store
 ?Icon
-._*
 Desktop.ini
 Thumbs.db
+._*
 
 # Development Files
 *.log
@@ -28,28 +28,30 @@ deps/
 .fetch
 erl_crash.dump
 *.ez
-*.tar
-*.tar.*
+venv/
+.venv/
 
-# Python
+# Artifacts
 __pycache__/
 *.pyc
 *.whl
-venv/
-.venv/
 build/
 dist/
 *.egg-info
-
-# C/C++
-bin/
 *.o
 *.a
+bin/
 
-# Databases
+# Raw Data
 *.rdb
 *.aof
 *.sqlite
 *.sqlite2
 *.sqlite3
+*.csv
+*.tsv
+*.parquet
+*.orc
+*.tar
+*.tar.*
 

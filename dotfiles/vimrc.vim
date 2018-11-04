@@ -29,11 +29,11 @@ set softtabstop=4
 set smarttab
 set expandtab
 set autoindent
+autocmd FileType make setlocal noexpandtab
 
 
 " Smoother Commanding and Exit to Normal Mode
 nnoremap ; :
-inoremap jj <esc>
 
 " Map <esc> to clear search highlights on normal mode
 nnoremap <esc> :noh<return><esc>
