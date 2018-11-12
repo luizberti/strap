@@ -4,7 +4,6 @@
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
-tap 'homebrew/science'
 tap 'homebrew/services'
 
 
@@ -101,7 +100,6 @@ brew 'vim', args: ['with-python3', 'with-lua', 'with-luajit']
 brew 'neovim'
 brew 'radare2'
 brew 'doctl'
-brew 'heroku'
 brew 'vault'
 brew 'terraform'
 brew 'sqlite'
