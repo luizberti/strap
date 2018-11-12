@@ -58,7 +58,7 @@ brew:
 	@test $$(uname -s) == 'Darwin'
 	mkdir -p /tmp/strap
 	cp bundles/brewfile.rb /tmp/strap/Brewfile
-	cd /tmp/strap && brew bundle && brew cleanup && brew cask cleanup
+	cd /tmp/strap && brew bundle && brew cleanup
 
 pip:
 	sudo pip3 install --upgrade pip
