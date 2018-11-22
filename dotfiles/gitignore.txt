@@ -12,6 +12,8 @@
 Desktop.ini
 Thumbs.db
 ._*
+*.bak
+*.backup
 
 # Development Files
 *.log
@@ -30,6 +32,7 @@ erl_crash.dump
 *.ez
 venv/
 .venv/
+.terraform/
 
 # Artifacts
 __pycache__/
@@ -41,6 +44,7 @@ dist/
 *.o
 *.a
 bin/
+*.tfstate
 
 # Raw Data
 *.rdb
@@ -54,4 +58,3 @@ bin/
 *.orc
 *.tar
 *.tar.*
-
