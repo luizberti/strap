@@ -30,7 +30,7 @@ set smarttab
 set expandtab
 set autoindent
 autocmd FileType make setlocal noexpandtab
-
+autocmd FileType yaml setlocal ts=2 sts=2 sw=2 expandtab
 
 " Smoother Commanding and Exit to Normal Mode
 nnoremap ; :
@@ -41,4 +41,3 @@ nnoremap <esc>^[ <esc>^[
 
 " Toggle Paste Mode on <F2>
 set pastetoggle=<F2>
-
