@@ -62,7 +62,7 @@ develop:
 	test -d ~/.emacs.d || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 	git -C ~/.emacs.d pull
 	# VSCODE
-	cp -f development/vscode.json ~/Library/Application\ Support/Code/User/settings.json
+	cp -f development/vscode.json ~/Library/Application\ Support/Code/User/settings.json  # TODO macOS specific
 
 
 # STANDALONE PACKAGES
@@ -96,6 +96,7 @@ brew:
 
 .PHONY: pip
 pip:
+	@command -v pip3 > /dev/null
 	sudo pip3 install --upgrade pip
 	sudo pip3 install -r bundles/pipfile.txt
 
