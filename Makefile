@@ -1,87 +1,135 @@
-all: install
+DOTFILES=$(shell find dotfiles -type f | awk -F / '{print $$NF}' | cut -d . -f-1)
+all: install checkinstall
 
-clean:
-	rm -rf /tmp/strap
 
+# ENVIRONMENT
+#############
+
+# INSTALL
+# installs dotfiles to the current user's home folder
+
+.PHONY: install
 install:
-	cp -f dotfiles/aliases.sh     ~/.aliases
-	cp -f dotfiles/posixrc.sh     ~/.bash_profile
-	cp -f dotfiles/posixrc.sh     ~/.bashrc
-	cp -f dotfiles/posixrc.sh     ~/.kshrc
-	cp -f dotfiles/posixrc.sh     ~/.profile
-	cp -f dotfiles/gitconfig.ini  ~/.gitconfig
-	cp -f dotfiles/gitignore.txt  ~/.gitignore
-	cp -f dotfiles/vimrc.vim      ~/.vimrc
+	sudo mkdir -p /etc/profile.d && sudo cp -f profile.d/* /etc/profile.d/
+	for file in $(DOTFILES); do cp -f dotfiles/$$file.* ~/.$$file; done
 
+
+# UNINSTALL
+# uninstalls dotfiles present in the current version of strap
+
+.PHONY: uninstall
 uninstall:
-	rm -f  ~/.aliases
-	rm -f  ~/.bash_profile
-	rm -f  ~/.bashrc
-	rm -f  ~/.kshrc
-	rm -f  ~/.profile
-	rm -f  ~/.gitconfig
-	rm -f  ~/.gitignore
-	rm -f  ~/.vimrc
+	for file in $(DOTFILES); do rm -f ~/.$$file; done
 
 
-############
-# PACKAGES #
-############
+# DOCTOR
+# checks current install for things that might break it
 
+.PHONY: doctor
+doctor:
+	test -s .bash_profile || rm -f .bash_profile
+	test -s .bash_login   || rm -f .bash_login
+	@test -f .bash_profile && echo .bash_profile might prevent sourcing .profile
+	@test -f .bash_login   && echo .bash_login might prevent sourcing .profile
+	@test -d /etc/profile.d || echo no profile.d in /etc/
+
+
+# DEVELOPMENT
+# configures the development environment, including editors, terminal, etc
+
+.PHONY: develop
+develop:
+	# TERMINALS
+	cp -f development/kitty.conf ~/.config/kitty/kitty.conf
+	# VIM and NVIM
+	mkdir -p ~/.vim/autoload ~/.config/nvim/autoload
+	curl -fsSLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	cp -f ~/.vim/autoload/plug.vim ~/.config/nvim/autoload/plug.vim
+	command -v vim  > /dev/null && vim  +PlugInstall +qall
+	command -v nvim > /dev/null && nvim +PlugInstall +qall
+	# EMACS and SPACEMACS
+	test -d ~/.emacs.d || command -v git > /dev/null
+	test -d ~/.emacs.d || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+	git -C ~/.emacs.d pull
+	# VSCODE
+	cp -f development/vscode.json ~/Library/Application\ Support/Code/User/settings.json
+
+
+# STANDALONE PACKAGES
+# manually installed packages and files
+
+.PHONY: homebrew
 homebrew:
-	@test $$(uname -s) == 'Darwin'
-	xcode-select --install || true
-	@read -p "Press ENTER once CLI Tools have been installed: "
-	@read -p "Sure? [ENTER] "
-	/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+	@test "$$(uname -s)" = Darwin
+	/usr/bin/ruby -e "$$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 	brew tap homebrew/bundle
 
+.PHONY: nix
 nix:
-	curl https://nixos.org/nix/install | sh
+	curl -fsSL https://nixos.org/nix/install | sh
 
+.PHONY: rust
 rust:
-	curl -sSf https://sh.rustup.rs | sh
-
-editors:
-	curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	vim +PlugInstall +qall
-	nvim +PlugInstall +qall
-	-git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
+	curl -fsSL https://sh.rustup.rs | sh -s -- -y
 
 
-###########
-# MANAGED #
-###########
+# MANAGED PACKAGES
+##################
 
+.PHONY: brew
 brew:
-	@test $$(uname -s) == 'Darwin'
+	@test "$$(uname -s)" = Darwin
 	mkdir -p /tmp/strap
 	cp bundles/brewfile.rb /tmp/strap/Brewfile
-	cd /tmp/strap && brew bundle && brew cleanup
+	cd /tmp/strap && brew bundle
+	rm -rf /tmp/strap && brew cleanup
 
+.PHONY: pip
 pip:
 	sudo pip3 install --upgrade pip
 	sudo pip3 install -r bundles/pipfile.txt
 
 
-##########
-# EXTRAS #
-##########
+# SYSTEM CONFIG
+###############
 
-sysconf:
-	@test $$(uname -s) == 'Darwin'
-	sh settings/system.sh
-	@echo "Remember to set a hostname in System Preferences..."
-	@echo "Remember to customize energy saving settings in System Preferences..."
+.PHONY: macos
+macos:
+	@test "$$(uname -s)" = Darwin
+	# TYPING & KEYBOARD
+	defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
+	defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
+	defaults write NSGlobalDomain NSAutomaticDashSubstitutionEnabled -bool false
+	defaults write NSGlobalDomain AppleKeyboardUIMode -int 3
+	defaults write NSGlobalDomain ApplePressAndHoldEnabled -bool false
+	defaults write NSGlobalDomain KeyRepeat -int 0
+	# DESKTOP ENVIRONMENT
+	defaults write com.apple.dock mru-spaces -bool false
+	defaults write com.apple.dock workspaces-auto-swoosh -bool false
+	defaults write com.apple.dock autohide -bool true
+	defaults write com.apple.dock autohide-delay -float 0
+	defaults write com.apple.dock minimize-to-application -bool true
+	defaults write NSGlobalDomain NSQuitAlwaysKeepsWindows -bool false
+	# FINDER
+	defaults write NSGlobalDomain AppleShowAllExtensions -bool true
+	defaults write com.apple.finder QLEnableTextSelection -bool true
+	defaults write com.apple.finder FXEnableExtensionChangeWarning -bool false
+	defaults write NSGlobalDomain com.apple.springing.enabled -bool true
+	defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
+	# RESTART MODIFIED PROCESSES
+	killall Finder
+	killall Dock
+	killall SystemUIServer
 
+.PHONY: rtile
 rtile:
-	@test $$(uname -s) == 'Darwin'
+	@test "$$(uname -s)" = Darwin
 	defaults write com.apple.dock persistent-others -array-add '{tile-data={}; tile-type="spacer-tile";}'
 	killall Dock
 
+.PHONY: ltile
 ltile:
-	@test $$(uname -s) == 'Darwin'
+	@test "$$(uname -s)" = Darwin
 	defaults write com.apple.dock persistent-apps -array-add '{tile-data={}; tile-type="spacer-tile";}'
 	killall Dock
 
