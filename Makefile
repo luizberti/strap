@@ -10,7 +10,7 @@
 DOTFILES=$(shell find dotfiles -type f | awk -F / '{print $$NF}' | cut -d . -f-1)
 PROFILE=$(shell find profile.d -type f | awk -F / '{print $$NF}')
 
-all: install checkinstall
+all: install doctor
 
 
 # INSTALL
@@ -43,7 +43,7 @@ doctor:
 	@test -d /etc/profile.d || echo no profile.d in /etc/
 
 
-# DEVELOPMENT
+# DEVELOP
 # configures the development environment, including editors, terminal, etc
 
 .PHONY: develop
