@@ -1,52 +1,61 @@
-# Git Ignore
-############
+# GARBAGE
+# os, filesystem, and display manager generatated metadata
 
-# Garbage
 .Spotlight-V100
 .Trashes
 .Trash
+.DS_Store
 .CFUserTextEncoding
 .localized
-.DS_Store
-?Icon
 Desktop.ini
 Thumbs.db
+?Icon
 ._*
-*.bak
-*.backup
+_*
 
-# Development Files
-*.log
+
+# DEVELOPMENT
+# editor recovery, project specs, and other state keeping metadata
+
+*.codekit
 *.swp
 .idea/
 .vscode/
-*.codekit
-.sass-cache/
-.cache/
-node_modules/
-_build/
-cover/
-deps/
-.fetch
-erl_crash.dump
-*.ez
-venv/
 .venv/
 .terraform/
+cover/
+deps/
 
-# Artifacts
-__pycache__/
+
+# ARTIFACTS
+# build artifacts and other non-source files
+
+*.bkp
+*.bak
+*.backup
+*.log
 *.pyc
 *.whl
+*.egg-info
+*.a
+*.o
+*.so
+*.ez
+*.tfstate
+*.dump
+.fetch
+.cache/
+.sass-cache/
+__pycache__/
+_build/
 build/
 dist/
-*.egg-info
-*.o
-*.a
 bin/
-*.tfstate
 
-# Raw Data
+
+# RAW DATA
+# data in raw/database/archival form
+
 *.rdb
 *.aof
 *.sqlite
@@ -58,3 +67,4 @@ bin/
 *.orc
 *.tar
 *.tar.*
+

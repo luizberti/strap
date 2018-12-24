@@ -1,24 +1,19 @@
-export LANG='en_US'
-export LC_ALL='en_US.UTF-8'
-export LC_CTYPE='UTF-8'
-export CLICOLOR=1
+#!/bin/bash
+
+# SHELL ENVIRONMENT
+export LANG=en_US LC_ALL=en_US.UTF-8 LC_CTYPE=UTF-8
+export CLICOLOR=1 EDITOR=vim
 PS1='\e[0;36m\t  \e[35m\u@\h  \e[33m\w  \e[31m[$?]\e[0m\n\$ '
 
-export EDITOR='vim'
-export HOMEBREW_CASK_OPTS='--appdir=/Applications'
+# PATH MANGLING
+export PATH=$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$PATH
+[ -x "$(command -v go > /dev/null)" ] && export PATH="$(go env GOBIN):$PATH"
+# TODO nix conda
 
-export PATH=/usr/local/bin:/usr/local/sbin:$PATH
-export PATH=$HOME/.cargo/bin:$PATH
-
-
-if [ -x $(command -v go) ]; then
-    export GOROOT=$(go env GOROOT)
-    export GOPATH=$(go env GOPATH)
-    export GOBIN=$GOPATH/bin
-    export PATH=$PATH:$GOBIN
-fi
-
-
-test -e ~/.aliases     && . ~/.aliases
-test -e ~/.credentials && . ~/.credentials
+# OS SPECIFIC
+if [ "$(uname -s)" = Darwin ]; then :;
+elif [ "$(uname -s)" = Linux ]; then :;  # TODO lsb_release
+elif [ "$(uname -s)" = FreeBSD ]; then :;
+elif [ "$(uname -s)" = OpenBSD ]; then :;
+else echo OS unsupported; fi
 
