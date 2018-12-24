@@ -1,9 +1,8 @@
 DOTFILES=$(shell find dotfiles -type f | awk -F / '{print $$NF}' | cut -d . -f-1)
+PROFILE=$(shell find profile.d -type f | awk -F / '{print $$NF}')
+
 all: install checkinstall
 
-
-# ENVIRONMENT
-#############
 
 # INSTALL
 # installs dotfiles to the current user's home folder
@@ -19,6 +18,7 @@ install:
 
 .PHONY: uninstall
 uninstall:
+	for file in $(PROFILE); do rm -f /etc/profile.d/$$file; done
 	for file in $(DOTFILES); do rm -f ~/.$$file; done
 
 
