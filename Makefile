@@ -83,7 +83,7 @@ rust:
 
 
 # MANAGED PACKAGES
-##################
+# managed package and bundle installs
 
 .PHONY: brew
 brew:
@@ -100,7 +100,7 @@ pip:
 
 
 # SYSTEM CONFIG
-###############
+# system tweaking and configuring recipes
 
 .PHONY: macos
 macos:
