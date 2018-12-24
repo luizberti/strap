@@ -1,3 +1,12 @@
+#    _____ _
+#   / ____| |
+#  | (___ | |_ _ __ __ _ _ __
+#   \___ \| __| '__/ _` | '_ \
+#   ____) | |_| | | (_| | |_) |
+#  |_____/ \__|_|  \__,_| .__/
+#  Smarter Bootstraping | |
+#          macos/ubuntu |_|
+
 DOTFILES=$(shell find dotfiles -type f | awk -F / '{print $$NF}' | cut -d . -f-1)
 PROFILE=$(shell find profile.d -type f | awk -F / '{print $$NF}')
 
