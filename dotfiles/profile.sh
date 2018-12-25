@@ -7,7 +7,7 @@ PS1='\e[0;36m\t  \e[35m\u@\h  \e[33m\w  \e[31m[$?]\e[0m\n\$ '
 
 # PATH MANGLING
 export PATH=$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$PATH
-[ -x "$(command -v go > /dev/null)" ] && export PATH="$(go env GOBIN):$PATH"
+[ -x "$(command -v go)" ] && export PATH="$(go env GOBIN):$PATH"
 # TODO nix conda
 
 # OS SPECIFIC
