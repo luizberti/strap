@@ -19,7 +19,7 @@ all: install doctor
 .PHONY: install
 install:
 	sudo mkdir -p /etc/profile.d && sudo cp -f profile.d/* /etc/profile.d/
-	echo '. /etc/profile.d/*.sh' | sudo tee /etc/profile > /dev/null
+	echo 'for f in /etc/profile.d/*.sh; do . $$f; done' | sudo tee /etc/profile > /dev/null
 	for file in $(DOTFILES); do cp -f dotfiles/$$file.* ~/.$$file; done
 
 
