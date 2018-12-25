@@ -37,11 +37,9 @@ uninstall:
 
 .PHONY: doctor
 doctor:
-	test -s .bash_profile || rm -f .bash_profile
-	test -s .bash_login   || rm -f .bash_login
-	@test -f .bash_profile && echo .bash_profile might prevent sourcing .profile
-	@test -f .bash_login   && echo .bash_login might prevent sourcing .profile
-	@test -d /etc/profile.d || echo no profile.d in /etc/
+	test ! -f ~/.bash_profile
+	test ! -f ~/.bash_login
+	test -d /etc/profile.d
 
 
 # DEVELOP
