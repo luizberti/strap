@@ -96,7 +96,7 @@ brew 'traefik'
 
 # Development
 brew 'emacs'
-brew 'vim', args: ['with-python3', 'with-lua', 'with-luajit']
+brew 'vim'
 brew 'neovim'
 brew 'radare2'
 brew 'doctl'
@@ -104,7 +104,7 @@ brew 'vault'
 brew 'terraform'
 brew 'sqlite'
 brew 'redis', restart_service: false
-brew 'postgresql', args: ['with-python3'], restart_service: false
+brew 'postgresql', restart_service: false
 
 # Candy
 brew 'mas'
@@ -128,20 +128,17 @@ mas  'Telegram', id: 747648890
 mas  'WhatsApp', id: 1147396723
 mas  'Things3', id: 904280696
 mas  'iA Writer', id: 775737590
-mas  'Pages', id: 409201541
 mas  '1Password 7', id: 1333542190
-mas  'Jumpshare', id: 889922906
 
 # Utilities
 cask 'moom'
 cask 'bartender'
 cask 'alfred'
 cask 'appcleaner'
-cask 'etcher'
+cask 'balenaetcher'
 cask 'colorpicker-skalacolor'
 mas  'Amphetamine', id: 937984704
 mas  'iStat Mini', id: 927292435
-mas  'PopClip', id: 445189367
 mas  'The Unarchiver', id: 425424353
 
 # Development

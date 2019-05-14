@@ -48,7 +48,8 @@ doctor:
 .PHONY: develop
 develop:
 	# TERMINALS
-	cp -f development/kitty.conf ~/.config/kitty/kitty.conf
+	mkdir -p ~/.config/kitty
+	cp -f develop/kitty.conf ~/.config/kitty/kitty.conf
 	# VIM and NVIM
 	mkdir -p ~/.vim/autoload ~/.config/nvim/autoload
 	curl -fsSLo ~/.vim/autoload/plug.vim https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
@@ -59,8 +60,9 @@ develop:
 	test -d ~/.emacs.d || command -v git > /dev/null
 	test -d ~/.emacs.d || git clone https://github.com/syl20bnr/spacemacs ~/.emacs.d
 	git -C ~/.emacs.d pull
-	# VSCODE
-	cp -f development/vscode.json ~/Library/Application\ Support/Code/User/settings.json  # TODO macOS specific
+	# VSCODE (TODO macOS specific)
+	mkdir -p ~/Library/Application\ Support/Code/User/
+	cp -f develop/vscode.json ~/Library/Application\ Support/Code/User/settings.json
 
 
 # STANDALONE PACKAGES
