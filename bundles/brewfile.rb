@@ -86,8 +86,6 @@ cask 'kitty'
 cask 'docker'
 cask 'visual-studio-code'
 brew 'neovim'
-brew 'vim'
-brew 'emacs'
 
 brew 'sqlite'
 brew 'redis', restart_service: false
