@@ -1,36 +1,30 @@
-# Taps & Args
-#############
-
 cask_args appdir: '/Applications'
 tap 'caskroom/cask'
 tap 'caskroom/fonts'
 tap 'homebrew/services'
+brew 'mas'
 
 
-# Base Packages
-###############
+# BASE SYSTEM
+#############
 
-# Base Tools
+# BUILD AND PACKAGING
 brew 'gcc'
 brew 'git'
 brew 'pkg-config'
 
-# C Libraries
-brew 'sdl'
-brew 'sdl2'
-brew 'zlib'
+# C LIBRARIES
+brew 'jemalloc'
 brew 'libsodium'
 brew 'libressl'
+brew 'zlib'
 brew 'libuv'
-brew 'jemalloc'
-brew 'hiredis'
 
-# Shells
+# SHELLS
 brew 'bash'
 brew 'dash'
-brew 'fish'
 
-# Core Tools
+# CORE TOOLS
 brew 'grep'
 brew 'coreutils'
 brew 'findutils'
@@ -39,49 +33,43 @@ brew 'gnu-time'
 brew 'gawk'
 brew 'gcore'
 
-# Langs
-brew 'python'
-brew 'python@2'
-brew 'pypy'
-brew 'pypy3'
-brew 'lua@5.1'
-brew 'lua@5.3'
+# LANGUAGES
 brew 'luajit'
-cask 'julia'
+brew 'python'
 brew 'elixir'
 brew 'go'
+cask 'julia'
 cask 'racket'
-brew 'clozure-cl'
-brew 'sbcl'
+cask 'adoptopenjdk'
+brew 'clojure'
+# TODO add graal?
+#brew 'sbcl'
+#brew 'clozure-cl'
+#brew 'ghc'
+#brew 'cabal-install'
+#brew 'ocaml'
+#brew 'opam'
+# TODO add rust
 
 
-# Tooling
-#########
+# CLI TOOLS
+###########
 
-# Utilities
-brew 'ag'
 brew 'ripgrep'
 brew 'xsv'
 brew 'jq'
-brew 'xz'
-brew 'zstd'
-brew 'p7zip'
-brew 'unrar'
-brew 'moreutils'
-brew 'signify-osx'
-brew 'pdfgrep'
-brew 'tree'
-brew 'entr'
 brew 'fd'
 brew 'fzf'
+brew 'tree'
+brew 'entr'
+brew 'zstd'
 brew 'htop'
-brew 'tmux'
-brew 'tig'
-brew 'git-plus'
-brew 'git-lfs'
+brew 'minisign'
 brew 'tarsnap'
+brew 'git-lfs'
+brew 'tig'
 
-# Networking
+# NETWORKING
 brew 'curl'
 brew 'wget'
 brew 'nmap'
@@ -90,73 +78,53 @@ brew 'netcat'
 brew 'netcat6'
 brew 'ngrep'
 brew 'tcpdump'
-brew 'wrk'
 brew 'vegeta'
 brew 'traefik'
 
-# Development
-brew 'emacs'
-brew 'vim'
+# DEVELOPMENT
+cask 'kitty'
+cask 'docker'
+cask 'visual-studio-code'
 brew 'neovim'
-brew 'radare2'
-brew 'doctl'
-brew 'vault'
-brew 'terraform'
+brew 'vim'
+brew 'emacs'
+
 brew 'sqlite'
 brew 'redis', restart_service: false
 brew 'postgresql', restart_service: false
 
-# Candy
-brew 'mas'
-brew 'buku'
-brew 'jrnl'
-brew 'youtube-dl'
 
-
-# Desktop
+# DESKTOP
 #########
 
-# Basics
 cask 'firefox'
 cask 'google-chrome'
 cask 'transmission'
-cask 'vlc'
 cask 'spotify'
+cask 'vlc'
+cask 'moom'
+cask 'alfred'
+cask 'appcleaner'
+cask 'balenaetcher'
+mas  'The Unarchiver', id: 425424353
+
 mas  'Spark', id: 1176895641
 mas  'Slack', id: 803453959
 mas  'Telegram', id: 747648890
 mas  'WhatsApp', id: 1147396723
+
 mas  'Things3', id: 904280696
 mas  'iA Writer', id: 775737590
+mas  'Notability', id: 736189492
 mas  '1Password 7', id: 1333542190
-
-# Utilities
-cask 'moom'
-cask 'bartender'
-cask 'alfred'
-cask 'appcleaner'
-cask 'balenaetcher'
-cask 'colorpicker-skalacolor'
-mas  'Amphetamine', id: 937984704
-mas  'iStat Mini', id: 927292435
-mas  'The Unarchiver', id: 425424353
-
-# Development
-cask 'kitty'
-cask 'dash'
-cask 'visual-studio-code'
-cask 'codekit'
-cask 'insomnia'
-cask 'docker'
-cask 'ksdiff'
 mas  'Kaleidoscope', id: 587512244
-
-# Design
+cask 'ksdiff'
+cask 'codekit'
+cask 'dash'
 cask 'blender'
 cask 'sketch'
 mas  'Pixelmator Pro', id: 1289583905
 
-# Fonts
 cask 'font-fira-mono'
 cask 'font-fira-code'
 cask 'font-ibm-plex'
