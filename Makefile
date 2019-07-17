@@ -21,6 +21,7 @@ install:
 	sudo mkdir -p /etc/profile.d && sudo cp -f profile.d/* /etc/profile.d/
 	echo 'for f in /etc/profile.d/*.sh; do . $$f; done' | sudo tee /etc/profile > /dev/null
 	for file in $(DOTFILES); do cp -f dotfiles/$$file.* ~/.$$file; done
+	mkdir -p ~/.config/nvim && cp -f ~/.vimrc ~/.config/nvim/init.vim
 
 
 # UNINSTALL
@@ -30,6 +31,7 @@ install:
 uninstall:
 	for file in $(PROFILE); do rm -f /etc/profile.d/$$file; done
 	for file in $(DOTFILES); do rm -f ~/.$$file; done
+	rm -f ~/.config/nvim/init.vim
 
 
 # DOCTOR
