@@ -5,6 +5,8 @@ export LANG=en_US LC_ALL=en_US.UTF-8 LC_CTYPE=UTF-8
 export CLICOLOR=1 EDITOR=vim
 shopt -s globstar extglob
 PS1='\e[0;36m\t  \e[35m\u@\h  \e[33m\w  \e[31m[$?]\e[0m\n\$ '
+HISTSIZE=1000
+HISTFILESIZE=10000
 
 # PATH MANGLING
 export PATH=$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$PATH
@@ -35,4 +37,5 @@ alias tiga='tig --all'
 [ -x "$(command -v nvim)" ] && alias vim='nvim'
 [ -x "$(command -v nvim)" ] && alias vimdiff='nvim -d'
 alias ccat='pygmentize -O style=monokai -f console256 -g'
+alias fzfh='cat $HOME/.bash_history | fzf --tac --sync --tiebreak=index | pbcopy'
 

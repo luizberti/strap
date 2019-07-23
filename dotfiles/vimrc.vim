@@ -3,6 +3,7 @@ set number
 syntax on
 hi Visual cterm=NONE ctermbg=White ctermfg=Black
 highlight clear SignColumn
+set guicursor=
 
 set showmatch
 set smartcase
