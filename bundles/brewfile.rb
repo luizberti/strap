@@ -73,13 +73,9 @@ brew 'tig'
 brew 'curl'
 brew 'wget'
 brew 'nmap'
-brew 'socat'
-brew 'netcat'
-brew 'netcat6'
-brew 'ngrep'
 brew 'tcpdump'
 brew 'vegeta'
-brew 'traefik'
+cask 'wireshark'
 
 # DEVELOPMENT
 cask 'kitty'
@@ -89,7 +85,6 @@ brew 'neovim'
 
 brew 'sqlite'
 brew 'redis', restart_service: false
-brew 'postgresql', restart_service: false
 
 
 # DESKTOP
@@ -100,8 +95,8 @@ cask 'google-chrome'
 cask 'transmission'
 cask 'spotify'
 cask 'vlc'
-cask 'moom'
 cask 'alfred'
+cask 'spectacle'
 cask 'appcleaner'
 cask 'balenaetcher'
 mas  'The Unarchiver', id: 425424353

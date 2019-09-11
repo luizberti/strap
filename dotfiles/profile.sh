@@ -7,6 +7,7 @@ shopt -s globstar extglob
 PS1='\e[0;36m\t  \e[35m\u@\h  \e[33m\w  \e[31m[$?]\e[0m\n\$ '
 HISTSIZE=1000
 HISTFILESIZE=10000
+HISTCONTROL=ignoredups:ignorespace
 
 # PATH MANGLING
 export PATH=$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$PATH

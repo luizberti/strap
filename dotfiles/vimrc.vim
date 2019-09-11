@@ -33,7 +33,18 @@ endfunction
 call plug#begin('~/.local/share/nvim/plugged')
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-surround'
+Plug 'airblade/vim-gitgutter'
 Plug 'guns/vim-sexp', { 'for': ['clojure', 'racket', 'scheme'] }
 Plug 'tpope/vim-sexp-mappings-for-regular-people', { 'for': ['clojure', 'racket', 'scheme'] }
 call plug#end()
+
+" GitGutter
+set signcolumn=yes
+set updatetime=700
+let g:gitgutter_map_keys = 0
+highlight clear SignColumn
+highlight GitGutterAdd ctermfg=2
+highlight GitGutterChange ctermfg=3
+highlight GitGutterDelete ctermfg=1
+highlight GitGutterChangeDelete ctermfg=4
 
