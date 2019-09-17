@@ -67,4 +67,10 @@ bin/
 *.orc
 *.tar
 *.tar.*
+*.gz
+*.xz
+*.zstd
+*.zst
+*.lz4
+*.zip
 
