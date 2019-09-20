@@ -4,7 +4,7 @@
 export LANG=en_US LC_ALL=en_US.UTF-8 LC_CTYPE=UTF-8
 export CLICOLOR=1 EDITOR=vim
 shopt -s globstar extglob
-PS1='\e[0;36m\t  \e[38;5;204m\u\e[38;5;242m@\e[38;5;212m\h.local  \e[33m\w\e[38;5;121m$PROMPT_GIT\e[31m$PROMPT_EXIT\e[38;5;75m$PROMPT_ELAPSED\e[0m\n\$ '
+PS1='\n\e[0;36m\t  \e[38;5;204m\u\e[38;5;242m@\e[38;5;212m\h.local  \e[33m\w\e[38;5;121m$PROMPT_GIT\e[31m$PROMPT_EXIT\e[38;5;75m$PROMPT_ELAPSED\e[0m\n\$ '
 HISTSIZE=1000
 HISTFILESIZE=10000
 HISTCONTROL=ignoredups:ignorespace
@@ -22,7 +22,10 @@ test \$PROMPT_ELAPSED -lt 8 && unset PROMPT_ELAPSED || PROMPT_ELAPSED="  Δ \${P
 # GIT INTEGRATION
 PROMPT_GIT="  \$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 if test \$? -eq 0; then
-    :
+    PROMPT_GIT_REMOTE="\$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2> /dev/null)"
+    if test \$? -eq 0; then
+        PROMPT_GIT="\$PROMPT_GIT \$(git rev-list --left-right --count \$PROMPT_GIT...\$PROMPT_GIT_REMOTE | awk '{printf "⇣%s⇡%s",\$1,\$2}')"
+    fi; unset PROMPT_GIT_REMOTE
 else
     unset PROMPT_GIT
 fi
