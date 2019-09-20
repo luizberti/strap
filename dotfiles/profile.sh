@@ -24,7 +24,7 @@ PROMPT_GIT="  \$(git rev-parse --abbrev-ref HEAD 2> /dev/null)"
 if test \$? -eq 0; then
     PROMPT_GIT_REMOTE="\$(git rev-parse --abbrev-ref --symbolic-full-name @{u} 2> /dev/null)"
     if test \$? -eq 0; then
-        PROMPT_GIT="\$PROMPT_GIT \$(git rev-list --left-right --count \$PROMPT_GIT...\$PROMPT_GIT_REMOTE | awk '{printf "⇣%s⇡%s",\$1,\$2}')"
+        PROMPT_GIT="\$PROMPT_GIT \$(git rev-list --left-right --count \$PROMPT_GIT...\$PROMPT_GIT_REMOTE | awk '{printf "⇣%s⇡%s",\$2,\$1}')"
     fi; unset PROMPT_GIT_REMOTE
 else
     unset PROMPT_GIT
