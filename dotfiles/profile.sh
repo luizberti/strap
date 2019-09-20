@@ -46,15 +46,15 @@ alias ..='cd ..'
 alias ...='cd ../..'
 alias ....='cd ../../..'
 alias .....='cd ../../../..'
-alias ll='ls -l'
-alias lsa='ls -A'
-alias lla='ls -lA'
-alias tra="tree -a -F -I '.git|.hg|.DS_Store|.sass-cache'"
-alias tre='tree --dirsfirst -F'
+alias ls='exa --group-directories-first'
+alias la='exa --all --group-directories-first'
+alias ll='exa --long --git --time-style=long-iso --group-directories-first'
+alias lla='ll --all'
+alias tre='exa --all --classify --tree --group-directories-first --ignore-glob=.git'
+alias tree='tre --long --git --time-style=long-iso'
 
 # TOOL ALIASES
-alias gs='git status'
-alias tiga='tig --all'
+alias g=git
 [ -x "$(command -v nvim)" ] && alias vim='nvim'
 [ -x "$(command -v nvim)" ] && alias vimdiff='nvim -d'
 alias ccat='pygmentize -O style=monokai -f console256 -g'

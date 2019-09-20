@@ -13,11 +13,40 @@ PROFILE=$(shell find profile.d -type f | awk -F / '{print $$NF}')
 all: install doctor
 
 
+# GIT
+# configures global git parameters
+
+.PHONY: git
+git:
+	# USER
+	git config --global user.name         'Luiz Berti'
+	git config --global user.email        'luizberti@users.noreply.github.com'
+	# CORE
+	git config --global core.editor       vim
+	git config --global core.excludesfile '~/.gitignore'
+	# FETCH, PULL, PUSH
+	git config --global fetch.prune       true
+	git config --global pull.rebase       preserve
+	git config --global push.default      current
+	# ALIAS
+	git config --global alias.lg          'log --graph --oneline --decorate --all'
+	git config --global alias.browse      '!tig --all'
+	git config --global alias.s           'status -sb'
+	git config --global alias.c           'commit -v'
+	git config --global alias.amend       'commit --amend --no-edit'
+	git config --global alias.hunks       'add -p'
+	git config --global alias.r           'remote -v'
+	git config --global alias.b           'branch -vv'
+	git config --global alias.ba          'branch -vva'
+	git config --global alias.go          'checkout'
+	git config --global alias.new         'checkout -b'
+
+
 # INSTALL
 # installs dotfiles to the current user's home folder
 
 .PHONY: install
-install:
+install: git
 	for file in $(DOTFILES); do cp -f dotfiles/$$file.* ~/.$$file; done
 	mkdir -p ~/.config/nvim && cp -f ~/.vimrc ~/.config/nvim/init.vim
 
