@@ -32,10 +32,12 @@ fi
 EOF
 )"
 
+
 # PATH MANGLING
-export PATH=$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$PATH
+export PATH=$HOME/.cargo/bin:/usr/local/bin:/usr/local/sbin:$PATH  # rustup + brew
 [ -x "$(command -v go)" ] && export PATH="$(go env GOBIN):$PATH"
 # TODO nix conda
+
 
 # OS SPECIFIC
 if [ "$(uname -s)" = Darwin ]; then :;
@@ -43,6 +45,7 @@ elif [ "$(uname -s)" = Linux ]; then :;  # TODO lsb_release
 elif [ "$(uname -s)" = FreeBSD ]; then :;
 elif [ "$(uname -s)" = OpenBSD ]; then :;
 else echo OS unsupported; fi
+
 
 # NAVIGATION ALIASES
 alias ..='cd ..'
@@ -55,6 +58,7 @@ alias ll='exa --long --git --time-style=long-iso --group-directories-first'
 alias lla='ll --all'
 alias tre='exa --all --classify --tree --group-directories-first --ignore-glob=.git'
 alias tree='tre --long --git --time-style=long-iso'
+
 
 # TOOL ALIASES
 alias g=git
