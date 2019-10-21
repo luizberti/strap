@@ -25,9 +25,10 @@ git:
 	git config --global core.editor       vim
 	git config --global core.excludesfile '~/.gitignore'
 	# FETCH, PULL, PUSH
-	git config --global fetch.prune       true
-	git config --global pull.rebase       preserve
-	git config --global push.default      current
+	git config --global fetch.prune            true
+	git config --global push.default           current
+	git config --global pull.rebase            preserve
+	git config --global branch.autoSetupRebase always
 	# ALIAS
 	git config --global alias.lg          'log --graph --oneline --decorate --all'
 	git config --global alias.browse      '!tig --all'
