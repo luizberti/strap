@@ -32,6 +32,7 @@ deps/
 
 *.bkp
 *.bak
+*.bk
 *.backup
 *.log
 *.pyc
@@ -48,10 +49,10 @@ deps/
 .sass-cache/
 __pycache__/
 _build/
+target/
 build/
 dist/
 bin/
-
 
 # RAW DATA
 # data in raw/database/archival form

@@ -62,6 +62,7 @@ alias tree='tre --long --git --time-style=long-iso'
 
 # TOOL ALIASES
 alias g=git
+alias k=kubectl
 [ -x "$(command -v nvim)" ] && alias vim='nvim'
 [ -x "$(command -v nvim)" ] && alias vimdiff='nvim -d'
 alias ccat='pygmentize -O style=monokai -f console256 -g'
